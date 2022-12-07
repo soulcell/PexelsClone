@@ -1,0 +1,66 @@
+
+.form {
+    position: relative;
+    width: 100%;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 50px;
+}
+
+.container .input,
+.container .button {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    border: 1px solid #f7f7f7;
+    background: #f7f7f7;
+}
+
+.container .input,
+.container .input::placeholder {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.container .input {
+    left: 0;
+    width: calc(100% - 50px);
+    padding: 15px 4px 15px 20px;
+    color: #7f7f7f;
+    border-radius: 0;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.container .button {
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 15px;
+    padding-left: 15px;
+    cursor: pointer;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.container .button:focus {
+    outline: none;
+}
+
+.container .button svg {
+    width: 25px;
+    min-width: 25px;
+    height: 25px;
+    min-height: 25px;
+    transition: fill .15s ease;
+    fill: #7f7f7f
+}
+
+.container .button:hover svg {
+    fill: #05a081
+}

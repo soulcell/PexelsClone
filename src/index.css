@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans');
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Cantarell,Helvetica Neue,Ubuntu,sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  min-height: 5000px;
+}
+
+button, input {
+  overflow: visible;
+}
+
+input:focus {
+  outline: none;
+}
+
+/* clears the 'X' from Internet Explorer */
+input[type=search]::-ms-clear,
+input[type=search]::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0; 
+}
+
+/* clears the 'X' from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none; 
+}
+
+button, input, optgroup, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+@media (min-width: 0) and (max-width: 900px) {
+  .Display-desktop {
+    display: none!important;
+  }
+}
+
+.m-0 {
+  margin: 0;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+@media (min-width: 901px) {
+  .desktop-mr-30 {
+    margin-right: 30px;
+  }
+}
+
+@media (min-width: 651px)  and (max-width: 900px) {
+  .tablet-mr-15 {
+    margin-right: 15px;
+  }
+}
+
+@media (min-width: 0px) and (max-width: 650px) {
+  .mobile-mr-15 {
+    margin-right: 15px;
+  }
+}
+
+.pt-50 {
+  padding-top: 50px;
+}
+
+.py-80 {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.px-15 {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (min-width: 901px) {
+  .desktop-px-30 {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+
+@media (min-width: 651px) and (max-width: 900px) {
+  .tablet-px-15 {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@media (min-width: 0px) and (max-width: 650px) {
+  .mobile-px-8 {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-direction-column {
+  flex-direction: column;
+}
+
+.Text_text {
+  display: block;
+  padding: 0;
+  padding-left: unset;
+  padding-right: unset;
+  border: none;
+  outline: none;
+  background: 0 0;
+}
+
+.Text_size-h33 {
+  font-weight: 600;
+  font-size: 33px;
+  line-height: 40px;
+  letter-spacing: -.02em;
+}
+
+.Text_color-whiteFFFFFF {
+  color: #fff;
+  fill: #fff;
+}
+
+.clickable {
+  cursor: pointer;
+  transition: filter .25s ease;
+  text-decoration: none;
+}
+
+.clickable:focus, .clickable:hover {
+  filter: brightness(.7);
+}
+
+.link {
+  text-decoration: none;
+}
+
+[type=search] {
+  outline-offset: -2px;
+}

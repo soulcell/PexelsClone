@@ -1,0 +1,34 @@
+.hero {
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 9;
+    width: 100%;
+    min-height: 500px;
+}
+.hero::after {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    opacity: .5;
+    background: #000;
+}
+
+.content {
+    width: 100%;
+    max-width: 630px;
+}
+
+.img {
+    position: absolute;
+    z-index: -2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
