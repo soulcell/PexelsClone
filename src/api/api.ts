@@ -51,7 +51,7 @@ export function fetchCurated(
   const queryString = new URLSearchParams();
   if (page !== undefined) queryString.set("page", page.toString());
   if (perPage !== undefined) queryString.set("per_page", perPage?.toString());
-  return fetch(API_BASE_URL + "curated?" + queryString).then((response) => {
+  return fetch(API_BASE_URL + "curated?" + queryString, {headers: {"Authorization": API_KEY}}).then((response) => {
     if (!response.ok) {
       throw new Error(response.statusText);
     }
@@ -68,7 +68,7 @@ export function fetchSearch(
   queryString.set("query", query);
   if (page !== undefined) queryString.set("page", page.toString());
   if (perPage !== undefined) queryString.set("per_page", perPage?.toString());
-  return fetch(API_BASE_URL + "search?" + queryString).then((response) => {
+  return fetch(API_BASE_URL + "search?" + queryString, {headers: {"Authorization": API_KEY}}).then((response) => {
     if (!response.ok) {
       throw new Error(response.statusText);
     }
