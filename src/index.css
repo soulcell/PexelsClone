@@ -1,12 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans');
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans");
 
-*, ::after, ::before {
+*,
+::after,
+::before {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: 'Plus Jakarta Sans', -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Cantarell,Helvetica Neue,Ubuntu,sans-serif;
+  font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Cantarell, Helvetica Neue, Ubuntu, sans-serif;
   font-size: 14px;
   line-height: 1.4;
   -webkit-font-smoothing: antialiased;
@@ -15,7 +18,8 @@ body {
   min-height: 5000px;
 }
 
-button, input {
+button,
+input {
   overflow: visible;
 }
 
@@ -24,11 +28,11 @@ input:focus {
 }
 
 /* clears the 'X' from Internet Explorer */
-input[type=search]::-ms-clear,
-input[type=search]::-ms-reveal {
+input[type="search"]::-ms-clear,
+input[type="search"]::-ms-reveal {
   display: none;
   width: 0;
-  height: 0; 
+  height: 0;
 }
 
 /* clears the 'X' from Chrome */
@@ -36,10 +40,14 @@ input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
-  display: none; 
+  display: none;
 }
 
-button, input, optgroup, select, textarea {
+button,
+input,
+optgroup,
+select,
+textarea {
   font-family: inherit;
   font-size: 100%;
   line-height: 1.15;
@@ -48,7 +56,7 @@ button, input, optgroup, select, textarea {
 
 @media (min-width: 0) and (max-width: 900px) {
   .Display-desktop {
-    display: none!important;
+    display: none !important;
   }
 }
 
@@ -70,7 +78,7 @@ button, input, optgroup, select, textarea {
   }
 }
 
-@media (min-width: 651px)  and (max-width: 900px) {
+@media (min-width: 651px) and (max-width: 900px) {
   .tablet-mr-15 {
     margin-right: 15px;
   }
@@ -102,7 +110,6 @@ button, input, optgroup, select, textarea {
     padding-right: 30px;
   }
 }
-
 
 @media (min-width: 651px) and (max-width: 900px) {
   .tablet-px-15 {
@@ -140,7 +147,7 @@ button, input, optgroup, select, textarea {
   font-weight: 600;
   font-size: 33px;
   line-height: 40px;
-  letter-spacing: -.02em;
+  letter-spacing: -0.02em;
 }
 
 .Text_color-whiteFFFFFF {
@@ -150,18 +157,19 @@ button, input, optgroup, select, textarea {
 
 .clickable {
   cursor: pointer;
-  transition: filter .25s ease;
+  transition: filter 0.25s ease;
   text-decoration: none;
 }
 
-.clickable:focus, .clickable:hover {
-  filter: brightness(.7);
+.clickable:focus,
+.clickable:hover {
+  filter: brightness(0.7);
 }
 
 .link {
   text-decoration: none;
 }
 
-[type=search] {
+[type="search"] {
   outline-offset: -2px;
 }

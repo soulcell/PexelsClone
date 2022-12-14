@@ -1,0 +1,30 @@
+import { CuratedResponse } from "../../api/api";
+
+export const LOAD_CURATED_PHOTOS = "LOAD_CURATED_PHOTOS";
+export interface LoadCuratedPhotosAction {
+  type: typeof LOAD_CURATED_PHOTOS;
+  page?: number;
+}
+
+export const LOAD_CURATED_PHOTOS_REQUEST = "LOAD_CURATED_PHOTOS_REQUEST";
+export interface LoadCuratedPhotosRequestAction {
+  type: typeof LOAD_CURATED_PHOTOS_REQUEST;
+}
+
+export const LOAD_CURATED_PHOTOS_SUCCESS = "LOAD_CURATED_PHOTOS_SUCCESS";
+export interface LoadCuratedPhotosSuccessAction {
+  type: typeof LOAD_CURATED_PHOTOS_SUCCESS;
+  response: CuratedResponse;
+}
+
+export const LOAD_CURATED_PHOTOS_FAILURE = "LOAD_CURATED_PHOTOS_FAILURE";
+export interface LoadCuratedPhotosFailureAction {
+  type: typeof LOAD_CURATED_PHOTOS_FAILURE;
+  error: Error | string;
+}
+
+export type CuratedPhotosAction =
+  | LoadCuratedPhotosAction
+  | LoadCuratedPhotosRequestAction
+  | LoadCuratedPhotosSuccessAction
+  | LoadCuratedPhotosFailureAction;
