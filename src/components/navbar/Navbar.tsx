@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Searchbar from "../searchbar/Searchbar";
 import styles from "./Navbar.module.css";
 import stylesWrapper from "../../sharedStyles/Wrapper.module.css";
 
 export interface NavbarProps {
-  isHomePage?: boolean;
+  isHomePage: boolean;
   scrollThreshold?: number;
 }
 
@@ -17,22 +17,24 @@ export default function Navbar({
   scrollThreshold = 500,
 }: NavbarProps): JSX.Element {
   const [isFixed, setFixed] = useState(true);
+  
+  const handleScroll = useCallback((event: Event) => {
+    const isOverScrolled = window.scrollY > scrollThreshold;
+    if (isOverScrolled) {
+      if (!isFixed) return;
+      setFixed(false);
+    } else {
+      if (isFixed) return;
+      setFixed(true);
+    }
+  }, [isFixed, scrollThreshold])
 
   useEffect(() => {
-    const handleScroll = (event: Event) => {
-      const isOverScrolled = window.scrollY > scrollThreshold;
-      if (isOverScrolled) {
-        if (!isFixed) return;
-        setFixed(false);
-      } else {
-        if (isFixed) return;
-        setFixed(true);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [isFixed, scrollThreshold]);
+    if (isHomePage) {
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    } else setFixed(false);
+  }, [handleScroll]);
 
   return (
     <>
@@ -42,12 +44,7 @@ export default function Navbar({
         }`}
       >
         <nav
-          className={
-            "m-0 desktop-px-30 mobile-px-8 tablet-px-15 " +
-            styles.flex +
-            " " +
-            stylesWrapper.maxWidth
-          }
+          className={ `m-0 desktop-px-30 mobile-px-8 tablet-px-15 ${styles.flex} ${stylesWrapper.maxWidth}`}
         >
           <div className={styles.left}>
             <NavbarLogo isDark={!isFixed} />
