@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import Searchbar from "../searchbar/Searchbar";
 import styles from "./Navbar.module.css";
 import stylesWrapper from "../../sharedStyles/Wrapper.module.css";
+import { Link } from "react-router-dom";
 
 export interface NavbarProps {
   isHomePage: boolean;
@@ -38,6 +39,7 @@ export default function Navbar({
 
   return (
     <>
+      { !isHomePage && <div className={styles.placeholderPadding}></div>}
       <div
         className={`${styles.container} ${isFixed ? styles.transparent : ""} ${
           styles.homePage
@@ -60,7 +62,7 @@ export default function Navbar({
 function NavbarLogo(props: NavbarLogoProps): JSX.Element {
   return (
     <>
-      <a className={styles.logo + " clickable link m-0"} href="#">
+      <Link className={`${styles.logo} clickable link m-0`} to="/">
         <svg
           width="130"
           height="50"
@@ -86,7 +88,7 @@ function NavbarLogo(props: NavbarLogoProps): JSX.Element {
             ></path>
           </g>
         </svg>
-      </a>
+      </Link>
     </>
   );
 }

@@ -8,7 +8,7 @@ const routes: RouteObject[] = [
         element: <HomePage />,
     },
     {
-        path: "/search/:searchString",
+        path: "/search/*",
         element: <SearchPage />
     }
 ]

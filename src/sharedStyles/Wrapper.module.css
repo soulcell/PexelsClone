@@ -6,11 +6,28 @@
   .maxWidth {
     max-width: 1300px;
   }
+
+  .horizontalPadding {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 }
 
 @media (min-width: 651px) and (max-width: 900px) {
   .maxWidth {
     max-width: 900px;
+  }
+
+  .horizontalPadding {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@media (min-width: 0px) and (max-width: 650px) {
+  .horizontalPadding {
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 

@@ -14,8 +14,6 @@ body {
   line-height: 1.4;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  min-height: 5000px;
 }
 
 button,
@@ -109,6 +107,10 @@ textarea {
     padding-left: 30px;
     padding-right: 30px;
   }
+
+  .desktop-mt-30 {
+    margin-top:30px
+  }
 }
 
 @media (min-width: 651px) and (max-width: 900px) {
@@ -116,12 +118,20 @@ textarea {
     padding-left: 15px;
     padding-right: 15px;
   }
+
+  .tablet-mt-30 {
+    margin-top: 30px;
+  }
 }
 
 @media (min-width: 0px) and (max-width: 650px) {
   .mobile-px-8 {
     padding-left: 8px;
     padding-right: 8px;
+  }
+
+  .mobile-mt-20 {
+    margin-top: 20px;
   }
 }
 

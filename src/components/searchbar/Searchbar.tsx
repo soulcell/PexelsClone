@@ -1,9 +1,25 @@
+import { useCallback, useState } from "react";
+import { Form, useNavigate } from "react-router-dom";
 import styles from "./Searchbar.module.css";
 
 export default function Searchbar(): JSX.Element {
+
+  const [ searchString, setSearchString ] = useState("");
+
+  const navigate = useNavigate();
+
+  const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
+    setSearchString(event.currentTarget.value)
+  }
+
+  const handleSubmit = useCallback((event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    navigate(`/search/${searchString}`)
+  }, [searchString])
+
   return (
     <>
-      <form className={styles.form + " m-0"} role="search" autoComplete="off">
+      <form className={`${styles.form} m-0`} role="search" autoComplete="off" onSubmit={handleSubmit}>
         <div className={styles.container}>
           <input
             className={styles.input}
@@ -12,8 +28,12 @@ export default function Searchbar(): JSX.Element {
             autoComplete="off"
             autoFocus
             placeholder="Поиск бесплатных изображений"
+            onChange={handleChange}
           ></input>
-          <button className={styles.button}>
+          <button
+            className={styles.button}
+            type="submit"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
