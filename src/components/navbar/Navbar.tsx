@@ -18,17 +18,20 @@ export default function Navbar({
   scrollThreshold = 500,
 }: NavbarProps): JSX.Element {
   const [isFixed, setFixed] = useState(true);
-  
-  const handleScroll = useCallback((event: Event) => {
-    const isOverScrolled = window.scrollY > scrollThreshold;
-    if (isOverScrolled) {
-      if (!isFixed) return;
-      setFixed(false);
-    } else {
-      if (isFixed) return;
-      setFixed(true);
-    }
-  }, [isFixed, scrollThreshold])
+
+  const handleScroll = useCallback(
+    (event: Event) => {
+      const isOverScrolled = window.scrollY > scrollThreshold;
+      if (isOverScrolled) {
+        if (!isFixed) return;
+        setFixed(false);
+      } else {
+        if (isFixed) return;
+        setFixed(true);
+      }
+    },
+    [isFixed, scrollThreshold]
+  );
 
   useEffect(() => {
     if (isHomePage) {
@@ -39,14 +42,14 @@ export default function Navbar({
 
   return (
     <>
-      { !isHomePage && <div className={styles.placeholderPadding}></div>}
+      {!isHomePage && <div className={styles.placeholderPadding}></div>}
       <div
         className={`${styles.container} ${isFixed ? styles.transparent : ""} ${
           styles.homePage
         }`}
       >
         <nav
-          className={ `m-0 desktop-px-30 mobile-px-8 tablet-px-15 ${styles.flex} ${stylesWrapper.maxWidth}`}
+          className={`m-0 desktop-px-30 mobile-px-8 tablet-px-15 ${styles.flex} ${stylesWrapper.maxWidth}`}
         >
           <div className={styles.left}>
             <NavbarLogo isDark={!isFixed} />

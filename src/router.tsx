@@ -3,15 +3,15 @@ import HomePage from "./pages/home/HomePage";
 import SearchPage from "./pages/search/SearchPage";
 
 const routes: RouteObject[] = [
-    {
-        path: "/",
-        element: <HomePage />,
-    },
-    {
-        path: "/search/*",
-        element: <SearchPage />
-    }
-]
+  {
+    path: "/",
+    element: <HomePage />,
+  },
+  {
+    path: "/search/*",
+    element: <SearchPage />,
+  },
+];
 
 const router = createBrowserRouter(routes);
 

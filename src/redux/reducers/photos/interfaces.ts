@@ -1,4 +1,3 @@
 import { CuratedPhotosState } from "./curated/reducer";
 
-
-export type PhotosState = CuratedPhotosState
+export type PhotosState = CuratedPhotosState;
