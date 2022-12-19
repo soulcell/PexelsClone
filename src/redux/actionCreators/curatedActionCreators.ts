@@ -6,7 +6,7 @@ export function loadCuratedPhotos(
 ): actions.LoadCuratedPhotosAction {
   return {
     type: actions.LOAD_CURATED_PHOTOS,
-    page,
+    page
   };
 }
 
