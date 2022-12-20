@@ -1,20 +1,16 @@
 {
-    "components": {
-        "heroHeader": {
-            "welcome": "The best free stock photos, royalty free images & videos shared by creators.",
-            "author": "Photo by",
-            "trending": "Trending"
-        },
-        "searchbar": {
-            "placeholder": "Search for free photos"
-        }
+  "components": {
+    "heroHeader": {
+      "welcome": "The best free stock photos, royalty free images & videos shared by creators.",
+      "author": "Photo by",
+      "trending": "Trending"
     },
-    "pages": {
-        "home": {
-
-        },
-        "search": {
-
-        }
+    "searchbar": {
+      "placeholder": "Search for free photos"
     }
+  },
+  "pages": {
+    "home": {},
+    "search": {}
+  }
 }

@@ -21,7 +21,8 @@ function SearchPage(): JSX.Element {
   console.log(i18n.language);
 
   const loadActionCreator = useCallback(
-    (page: number) => loadSearchPhotos(searchString, page, undefined, i18n.language),
+    (page: number) =>
+      loadSearchPhotos(searchString, page, undefined, i18n.language),
     [searchString]
   );
 

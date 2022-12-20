@@ -11,7 +11,7 @@ export function loadSearchPhotos(
     type: actions.LOAD_SEARCH_PHOTOS,
     searchString,
     page,
-    locale
+    locale,
   };
 }
 

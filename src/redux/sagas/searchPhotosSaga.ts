@@ -8,7 +8,7 @@ function* onLoadSearchPhotos({
   searchString,
   page,
   perPage,
-  locale
+  locale,
 }: actionTypes.LoadSearchPhotosAction) {
   try {
     yield put(actionCreators.loadSearchPhotosRequest());

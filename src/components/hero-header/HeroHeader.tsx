@@ -63,7 +63,9 @@ function HeroHeaderAttribution({
           className={`${textStyles["text"]} ${textStyles["size-inherit"]} ${textStyles["size-inherit-mobile"]}
        ${textStyles["weight-inherit"]} ${textStyles["color-inherit"]} m-0 ${textStyles["inline"]}`}
         >
-          <span className={`${styles["attributionLabel"]}`}>{t("components.heroHeader.author")}</span>
+          <span className={`${styles["attributionLabel"]}`}>
+            {t("components.heroHeader.author")}
+          </span>
           &nbsp;
           <span>{authorName}</span>
         </p>
