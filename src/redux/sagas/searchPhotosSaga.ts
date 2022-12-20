@@ -7,10 +7,12 @@ import * as actionCreators from "../actionCreators/searchActionCreators";
 function* onLoadSearchPhotos({
   searchString,
   page,
+  perPage,
+  locale
 }: actionTypes.LoadSearchPhotosAction) {
   try {
     yield put(actionCreators.loadSearchPhotosRequest());
-    const data = yield* call(fetchSearch, searchString, page);
+    const data = yield* call(fetchSearch, searchString, page, perPage, locale);
     yield put(actionCreators.loadSearchPhotosSuccess(data));
   } catch (error) {
     yield put(actionCreators.loadSearchPhotosFailure(error as Error));

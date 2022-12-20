@@ -1,5 +1,4 @@
 const API_BASE_URL = "https://api.pexels.com/v1/";
-//const API_BASE_URL = "https://388cc033-dc32-40a1-b333-821b854d4f02.mock.pstmn.io/";
 const API_KEY = "563492ad6f917000010000014640aabb4e9d420cbe1c0df7daf4c2bf";
 
 export interface PhotoSrc {
@@ -56,7 +55,7 @@ export function fetchCurated(
 ): Promise<CuratedResponse> {
   const queryString = new URLSearchParams();
   if (page !== undefined) queryString.set("page", page.toString());
-  if (perPage !== undefined) queryString.set("per_page", perPage?.toString());
+  if (perPage !== undefined) queryString.set("per_page", perPage.toString());
   return fetch(API_BASE_URL + "curated?" + queryString, {
     headers: { Authorization: API_KEY },
   }).then((response) => {
@@ -70,12 +69,14 @@ export function fetchCurated(
 export function fetchSearch(
   query: string,
   page?: number,
-  perPage?: number
+  perPage?: number,
+  locale?: string
 ): Promise<SearchResponse> {
   const queryString = new URLSearchParams();
   queryString.set("query", query);
   if (page !== undefined) queryString.set("page", page.toString());
-  if (perPage !== undefined) queryString.set("per_page", perPage?.toString());
+  if (perPage !== undefined) queryString.set("per_page", perPage.toString());
+  if (locale) queryString.set("locale", locale.toString());
   return fetch(API_BASE_URL + "search?" + queryString, {
     headers: { Authorization: API_KEY },
   }).then((response) => {

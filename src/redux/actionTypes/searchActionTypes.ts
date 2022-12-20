@@ -5,6 +5,8 @@ export interface LoadSearchPhotosAction {
   type: typeof LOAD_SEARCH_PHOTOS;
   searchString: string;
   page?: number;
+  perPage?: number;
+  locale?: string;
 }
 
 export const LOAD_SEARCH_PHOTOS_REQUEST = "LOAD_SEARCH_PHOTOS_REQUEST";

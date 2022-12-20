@@ -3,12 +3,15 @@ import * as actions from "../actionTypes/searchActionTypes";
 
 export function loadSearchPhotos(
   searchString: string,
-  page?: number
+  page?: number,
+  perPage?: number,
+  locale?: string
 ): actions.LoadSearchPhotosAction {
   return {
     type: actions.LOAD_SEARCH_PHOTOS,
     searchString,
     page,
+    locale
   };
 }
 
