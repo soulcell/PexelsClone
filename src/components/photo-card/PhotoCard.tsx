@@ -8,7 +8,7 @@ export interface PhotoCardProps {
 export default function PhotoCard(props: PhotoCardProps): JSX.Element {
   return (
     <>
-      <img className={styles.image} src={props.photo.src.medium}></img>
+      <img className={styles.image} src={props.photo.src.large2x}></img>
     </>
   );
 }

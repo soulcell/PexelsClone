@@ -1,0 +1,699 @@
+.text {
+    display: block;
+    padding: 0;
+    padding-right: unset;
+    padding-left: unset;
+    border: none;
+    outline: none;
+    background: 0 0
+}
+
+.text:focus {
+    outline: none
+}
+
+.text a {
+    color: inherit
+}
+
+.text strong {
+    display: inline
+}
+
+.color-inherit {
+    color: inherit;
+    fill: inherit
+}
+
+.color-inherit .underlined .inne._F737i:after {
+    border-color: inherit
+}
+
+.color-inherit-icon svg {
+    fill: inherit
+}
+
+.color-greyMinus3F7F7F7 {
+    color: #f7f7f7;
+    fill: #f7f7f7
+}
+
+.color-greyMinus3F7F7F7 .underlined .inne._F737i:after {
+    border-color: #f7f7f7
+}
+
+.color-greyMinus3F7F7F7-icon svg {
+    fill: #f7f7f7
+}
+
+.color-greyMinus2DFDFE0 {
+    color: #dfdfe0;
+    fill: #dfdfe0
+}
+
+.color-greyMinus2DFDFE0 .underlined .inne._F737i:after {
+    border-color: #f7f7f7
+}
+
+.color-greyMinus2DFDFE0-icon svg {
+    fill: #dfdfe0
+}
+
+.color-greyMinus1BFBFBF {
+    color: #bfbfbf;
+    fill: #bfbfbf
+}
+
+.color-greyMinus1BFBFBF .underlined .inne._F737i:after {
+    border-color: #dfdfe0
+}
+
+.color-greyMinus1BFBFBF-icon svg {
+    fill: #bfbfbf
+}
+
+.color-grey7F7F7F {
+    color: #7f7f7f;
+    fill: #7f7f7f
+}
+
+.color-grey7F7F7F .underlined .inne._F737i:after {
+    border-color: #bfbfbf
+}
+
+.color-grey7F7F7F-icon svg {
+    fill: #7f7f7f
+}
+
+.color-greyPlus14A4A4A {
+    color: #4a4a4a;
+    fill: #4a4a4a
+}
+
+.color-greyPlus14A4A4A .underlined .inne._F737i:after {
+    border-color: #7f7f7f
+}
+
+.color-greyPlus14A4A4A-icon svg {
+    fill: #4a4a4a
+}
+
+.color-midnight2C343E {
+    color: #2c343e;
+    fill: #2c343e
+}
+
+.color-midnight2C343E .underlined .inne._F737i:after {
+    border-color: #2c343e
+}
+
+.color-midnight2C343E-icon svg {
+    fill: #2c343e
+}
+
+.color-black000000 {
+    color: #000;
+    fill: #000
+}
+
+.color-black000000 .underlined .inne._F737i:after {
+    border-color: #000
+}
+
+.color-black000000-icon svg {
+    fill: #000
+}
+
+.color-whiteFFFFFF {
+    color: #fff;
+    fill: #fff
+}
+
+.color-whiteFFFFFF .underlined .inne._F737i:after {
+    border-color: #fff
+}
+
+.color-whiteFFFFFF-icon svg {
+    fill: #fff
+}
+
+.color-green05A081 {
+    color: #05a081;
+    fill: #05a081
+}
+
+.color-green05A081 .underlined .inne._F737i:after {
+    border-color: #05a081
+}
+
+.color-green05A081-icon svg {
+    fill: #05a081
+}
+
+.color-redD3405C {
+    color: #d3405c;
+    fill: #d3405c
+}
+
+.color-redD3405C .underlined .inne._F737i:after {
+    border-color: #d3405c
+}
+
+.color-redD3405C-icon svg {
+    fill: #d3405c
+}
+
+.color-purple7831ED {
+    color: #7831ed;
+    fill: #7831ed
+}
+
+.color-purple7831ED .underlined .inne._F737i:after {
+    border-color: #7831ed
+}
+
+.color-purple7831ED-icon svg {
+    fill: #7831ed
+}
+
+.size-inherit {
+    font-size: inherit;
+    font-weight: inherit
+}
+
+.size-h60 {
+    font-weight: 600;
+    font-size: 60px;
+    line-height: 70px;
+    letter-spacing: -.02em
+}
+
+.size-h60 strong {
+    font-weight: 700
+}
+
+.size-h60 svg {
+    width: 72px;
+    min-width: 72px;
+    max-width: 72px;
+    height: 72px;
+    min-height: 72px;
+    max-height: 72px
+}
+
+.size-h60 p:not(:last-child) {
+    margin-bottom: 50px
+}
+
+.size-h49 {
+    font-weight: 600;
+    font-size: 49px;
+    line-height: 65px;
+    letter-spacing: -.02em
+}
+
+.size-h49 strong {
+    font-weight: 700
+}
+
+.size-h49 svg {
+    width: 58.8px;
+    min-width: 58.8px;
+    max-width: 58.8px;
+    height: 58.8px;
+    min-height: 58.8px;
+    max-height: 58.8px
+}
+
+.size-h49 p:not(:last-child) {
+    margin-bottom: 50px
+}
+
+.size-h33 {
+    font-weight: 600;
+    font-size: 33px;
+    line-height: 40px;
+    letter-spacing: -.02em
+}
+
+.size-h33 strong {
+    font-weight: 700
+}
+
+.size-h33 svg {
+    width: 39.6px;
+    min-width: 39.6px;
+    max-width: 39.6px;
+    height: 39.6px;
+    min-height: 39.6px;
+    max-height: 39.6px
+}
+
+.size-h33 p:not(:last-child) {
+    margin-bottom: 30px
+}
+
+.size-h23 {
+    font-weight: 600;
+    font-size: 23px;
+    line-height: 36px;
+    letter-spacing: -.015em
+}
+
+.size-h23 strong {
+    font-weight: 700
+}
+
+.size-h23 svg {
+    width: 27.6px;
+    min-width: 27.6px;
+    max-width: 27.6px;
+    height: 27.6px;
+    min-height: 27.6px;
+    max-height: 27.6px
+}
+
+.size-h23 p:not(:last-child) {
+    margin-bottom: 20px
+}
+
+.size-h21 {
+    font-weight: 600;
+    font-size: 21px;
+    line-height: 33px;
+    letter-spacing: -.015em
+}
+
+.size-h21 strong {
+    font-weight: 700
+}
+
+.size-h21 svg {
+    width: 25.2px;
+    min-width: 25.2px;
+    max-width: 25.2px;
+    height: 25.2px;
+    min-height: 25.2px;
+    max-height: 25.2px
+}
+
+.size-h21 p:not(:last-child) {
+    margin-bottom: 20px
+}
+
+.size-h18 {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 30px
+}
+
+.size-h18 strong {
+    font-weight: 700
+}
+
+.size-h18 svg {
+    width: 21.6px;
+    min-width: 21.6px;
+    max-width: 21.6px;
+    height: 21.6px;
+    min-height: 21.6px;
+    max-height: 21.6px
+}
+
+.size-h18 p:not(:last-child) {
+    margin-bottom: 20px
+}
+
+.size-p18 {
+    font-weight: 600;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28px
+}
+
+.size-p18 strong {
+    font-weight: 700;
+    font-weight: 600
+}
+
+.size-p18 svg {
+    width: 21.6px;
+    min-width: 21.6px;
+    max-width: 21.6px;
+    height: 21.6px;
+    min-height: 21.6px;
+    max-height: 21.6px
+}
+
+.size-p18 p:not(:last-child) {
+    margin-bottom: 20px
+}
+
+.size-p16 {
+    font-weight: 600;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 26px
+}
+
+.size-p16 strong {
+    font-weight: 700;
+    font-weight: 600
+}
+
+.size-p16 svg {
+    width: 19.2px;
+    min-width: 19.2px;
+    max-width: 19.2px;
+    height: 19.2px;
+    min-height: 19.2px;
+    max-height: 19.2px
+}
+
+.size-p16 p:not(:last-child) {
+    margin-bottom: 15px
+}
+
+.size-p14 {
+    font-weight: 600;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22px
+}
+
+.size-p14 strong {
+    font-weight: 700;
+    font-weight: 600
+}
+
+.size-p14 svg {
+    width: 16.8px;
+    min-width: 16.8px;
+    max-width: 16.8px;
+    height: 16.8px;
+    min-height: 16.8px;
+    max-height: 16.8px
+}
+
+.size-p14 p:not(:last-child) {
+    margin-bottom: 8px
+}
+
+@media(min-width: 0)and (max-width:900px) {
+    .size-inherit-mobile {
+        font-size:inherit;
+        font-weight: inherit
+    }
+
+    .size-h50-mobile {
+        font-weight: 600;
+        font-size: 50px;
+        line-height: 58px;
+        letter-spacing: -.02em
+    }
+
+    .size-h50-mobile strong {
+        font-weight: 700
+    }
+
+    .size-h50-mobile svg {
+        width: 60px;
+        min-width: 60px;
+        max-width: 60px;
+        height: 60px;
+        min-height: 60px;
+        max-height: 60px
+    }
+
+    .size-h39-mobile {
+        font-weight: 600;
+        font-size: 39px;
+        line-height: 52px;
+        letter-spacing: -.02em
+    }
+
+    .size-h39-mobile strong {
+        font-weight: 700
+    }
+
+    .size-h39-mobile svg {
+        width: 46.8px;
+        min-width: 46.8px;
+        max-width: 46.8px;
+        height: 46.8px;
+        min-height: 46.8px;
+        max-height: 46.8px
+    }
+
+    .size-h28-mobile {
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 34px;
+        letter-spacing: -.015em
+    }
+
+    .size-h28-mobile strong {
+        font-weight: 700
+    }
+
+    .size-h28-mobile svg {
+        width: 33.6px;
+        min-width: 33.6px;
+        max-width: 33.6px;
+        height: 33.6px;
+        min-height: 33.6px;
+        max-height: 33.6px
+    }
+
+    .size-h23-mobile {
+        font-weight: 600;
+        font-size: 23px;
+        line-height: 36px;
+        letter-spacing: -.015em
+    }
+
+    .size-h23-mobile strong {
+        font-weight: 700
+    }
+
+    .size-h23-mobile svg {
+        width: 27.6px;
+        min-width: 27.6px;
+        max-width: 27.6px;
+        height: 27.6px;
+        min-height: 27.6px;
+        max-height: 27.6px
+    }
+
+    .size-h21-mobile {
+        font-weight: 600;
+        font-size: 21px;
+        line-height: 33px;
+        letter-spacing: -.015em
+    }
+
+    .size-h21-mobile strong {
+        font-weight: 700
+    }
+
+    .size-h21-mobile svg {
+        width: 25.2px;
+        min-width: 25.2px;
+        max-width: 25.2px;
+        height: 25.2px;
+        min-height: 25.2px;
+        max-height: 25.2px
+    }
+
+    .size-h18-mobile {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 30px
+    }
+
+    .size-h18-mobile strong {
+        font-weight: 700
+    }
+
+    .size-h18-mobile svg {
+        width: 21.6px;
+        min-width: 21.6px;
+        max-width: 21.6px;
+        height: 21.6px;
+        min-height: 21.6px;
+        max-height: 21.6px
+    }
+
+    .size-p18-mobile {
+        font-weight: 600;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 28px
+    }
+
+    .size-p18-mobile strong {
+        font-weight: 700;
+        font-weight: 600
+    }
+
+    .size-p18-mobile svg {
+        width: 21.6px;
+        min-width: 21.6px;
+        max-width: 21.6px;
+        height: 21.6px;
+        min-height: 21.6px;
+        max-height: 21.6px
+    }
+
+    .size-p16-mobile {
+        font-weight: 600;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 26px
+    }
+
+    .size-p16-mobile strong {
+        font-weight: 700;
+        font-weight: 600
+    }
+
+    .size-p16-mobile svg {
+        width: 19.2px;
+        min-width: 19.2px;
+        max-width: 19.2px;
+        height: 19.2px;
+        min-height: 19.2px;
+        max-height: 19.2px
+    }
+
+    .size-p14-mobile {
+        font-weight: 600;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 22px
+    }
+
+    .size-p14-mobile strong {
+        font-weight: 700;
+        font-weight: 600
+    }
+
+    .size-p14-mobile svg {
+        width: 16.8px;
+        min-width: 16.8px;
+        max-width: 16.8px;
+        height: 16.8px;
+        min-height: 16.8px;
+        max-height: 16.8px
+    }
+}
+
+.weight-inherit {
+    font-weight: inherit
+}
+
+.weight-bold,.weight-bold strong {
+    font-weight: 700
+}
+
+.weight-semibold {
+    font-weight: 600
+}
+
+.weight-semibold strong {
+    font-weight: 700
+}
+
+.weight-medium {
+    font-weight: 500
+}
+
+.weight-medium strong {
+    font-weight: 600
+}
+
+.weight-black,.weight-book {
+    font-weight: inherit
+}
+
+.center {
+    text-align: center
+}
+
+.inline {
+    display: inline-block
+}
+
+.capitalize {
+    text-transform: capitalize
+}
+
+.uppercase {
+    text-transform: uppercase
+}
+
+.disabled {
+    cursor: not-allowed
+}
+
+.iconRight,.icon {
+    display: flex;
+    align-items: center
+}
+
+.iconRight.inline,.icon.inline {
+    display: inline-flex
+}
+
+.iconRight svg:first-child,.icon svg:first-child {
+    margin-right: .4em
+}
+
+.iconRight svg:last-child:not(:first-child),.icon svg:last-child:not(:first-child) {
+    margin-left: .4em
+}
+
+.iconRotated svg {
+    transform: rotate(-180deg)
+}
+
+.underlined .inne._F737i {
+    border-bottom: 2px dotted #c7c7c7
+}
+
+.underlined .inne._F737i:focus,.underlined .inne._F737i:hover {
+    filter: brightness(.87)
+}
+
+.noWrap {
+    white-space: nowrap
+}
+
+.noLineHeight:not(.ellipsisWrapper) {
+    line-height: 1
+}
+
+.ellipsisWrapper .inne._F737i,.ellipsis {
+    overflow: hidden;
+    max-width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+
+.ellipsisWrapper .inne._F737i {
+    display: block
+}
+
+.ellipsisWrapper:after,.ellipsisWrapper:before {
+    display: block;
+    content: ""
+}
+
+.ellipsisWrapper:before {
+    margin-top: -.4em
+}
+
+.ellipsisWrapper:after {
+    margin-bottom: -.4em
+}
+
