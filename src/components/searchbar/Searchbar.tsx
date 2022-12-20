@@ -1,10 +1,12 @@
 import { useCallback, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Form, useNavigate } from "react-router-dom";
 import styles from "./Searchbar.module.css";
 
 export default function Searchbar(): JSX.Element {
   const [searchString, setSearchString] = useState("");
 
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
@@ -34,7 +36,7 @@ export default function Searchbar(): JSX.Element {
             autoCapitalize="none"
             autoComplete="off"
             autoFocus
-            placeholder="Поиск бесплатных изображений"
+            placeholder={t("components.searchbar.placeholder").toString()}
             onChange={handleChange}
           ></input>
           <button className={styles.button} type="submit">

@@ -1,8 +1,7 @@
-import "./App.css";
-import Navbar from "./components/navbar/Navbar";
-import HeroHeader from "./components/hero-header/HeroHeader";
 import { RouterProvider } from "react-router-dom";
+import "./i18n/config";
 import router from "./router";
+import "./App.css";
 
 function App() {
   return (
