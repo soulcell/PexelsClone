@@ -13,7 +13,7 @@ function HomePage(): JSX.Element {
   const dispatch = useDispatch();
   const photoSelector = useSelector(selectCuratedPhotos);
 
-  const headerPhotoIdx = Math.floor(Math.random() * 12);;
+  const headerPhotoIdx = Math.floor(Math.random() * 12);
 
   const [headerPhoto, setHeaderPhoto] = useState<Photo | undefined>(undefined);
 
@@ -23,12 +23,12 @@ function HomePage(): JSX.Element {
 
   useEffect(() => {
     if (!headerPhoto) setHeaderPhoto(photoSelector.photos[headerPhotoIdx]);
-  }, [photoSelector.photos[headerPhotoIdx]])
+  }, [photoSelector.photos, headerPhoto, headerPhotoIdx]);
 
   return (
     <>
       <Navbar isHomePage={true} />
-      <HeroHeader photo={headerPhoto}/>
+      <HeroHeader photo={headerPhoto} />
       <div
         className={`${wrapperStyles.maxWidth} ${wrapperStyles.horizontalPadding} mobile-mt-20 tablet-mt-30 desktop-mt-30 mb-30`}
       >
