@@ -1,4 +1,5 @@
 import { useCallback, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import Navbar from "../../components/navbar/Navbar";
@@ -15,8 +16,12 @@ function SearchPage(): JSX.Element {
   const params = useParams();
   const searchString = params["*"]!.split("/")[0];
 
+  const { i18n } = useTranslation();
+
+  console.log(i18n.language);
+
   const loadActionCreator = useCallback(
-    (page: number) => loadSearchPhotos(searchString, page),
+    (page: number) => loadSearchPhotos(searchString, page, undefined, i18n.language),
     [searchString]
   );
 
