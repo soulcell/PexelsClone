@@ -1,4 +1,8 @@
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Photo } from "../../api/api";
+import { addFavoritePhoto, removeFavoritePhoto } from "../../redux/actionCreators/favoriteActionCreators";
+import selectFavoritePhotos from "../../redux/reducers/photos/favorite/selector";
 import styles from "./PhotoCard.module.css";
 
 export interface PhotoCardProps {
@@ -6,6 +10,20 @@ export interface PhotoCardProps {
 }
 
 export default function PhotoCard({ photo }: PhotoCardProps): JSX.Element {
+  const favoritePhotos = useSelector(selectFavoritePhotos);
+  const dispatch = useDispatch();
+
+  let isLiked = favoritePhotos.photoIds.has(photo.id);
+
+
+  function handleLikeClick() {
+    if (!isLiked) {
+      dispatch(addFavoritePhoto(photo));
+    } else {
+      dispatch(removeFavoritePhoto(photo));
+    }
+  }
+
   return (
     <>
       <article className={`${styles.card} ${styles.overlay}`}>
@@ -17,11 +35,9 @@ export default function PhotoCard({ photo }: PhotoCardProps): JSX.Element {
           <a className={`${styles.download} ${styles.button} ${styles["button-text-white"]} p-0`} href={photo.src.original} target="_blank" rel="noopener noreferrer">
             <PhotoCardDownloadIcon/>
           </a>
-          <button className={`${styles.like} ${styles.button} ${styles["button-like"]} ${styles["button-text-white"]} p-0`}>
-            <PhotoCardLikeIcon active={false}/>
+          <button onClick={handleLikeClick} className={`${styles.like} ${styles.button} ${styles["button-like"]} ${styles["button-text-white"]} p-0`}>
+            <PhotoCardLikeIcon active={isLiked}/>
           </button>
-
-
         </div>
       </article>
     </>
