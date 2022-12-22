@@ -96,6 +96,10 @@ textarea {
   }
 }
 
+.p-0 {
+  padding: 0;
+}
+
 .pt-50 {
   padding-top: 50px;
 }
