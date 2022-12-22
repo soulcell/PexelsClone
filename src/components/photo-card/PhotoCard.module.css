@@ -6,3 +6,78 @@
 .image {
   width: 100%;
 }
+
+.photographer {
+  max-width: calc(100% - 70px);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding-bottom: 1.15rem;
+  padding-left: 1.15rem;
+  text-decoration: none;
+  color: #fff;
+  white-space: nowrap;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+  z-index: 2;
+}
+
+.link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.name {
+  box-sizing: content-box;
+  max-width: calc(100% - 40px);
+  margin-right: 40px;
+  margin-left: 5px;
+  display: inline-block;
+  vertical-align: middle;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #e8e8e8;
+}
+
+@media (max-width: 650px) {
+  .photographer {
+    display: none;
+  }
+}
+
+.card:hover .photographer,
+.card:hover:before {
+  opacity: 1;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+}
+
+.overlay:before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 4px;
+  height: 80px;
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    from(rgba(0, 0, 0, 0.5)),
+    to(rgba(0, 0, 0, 0))
+  );
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  opacity: 0;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+  z-index: 1;
+}
