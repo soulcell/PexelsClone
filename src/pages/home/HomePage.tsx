@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { Photo } from "../../api/api";
 import HeroHeader from "../../components/hero-header/HeroHeader";
@@ -7,10 +8,12 @@ import PhotoGrid from "../../components/photo-grid/PhotoGrid";
 import { loadCuratedPhotos } from "../../redux/actionCreators/curatedActionCreators";
 import selectCuratedPhotos from "../../redux/reducers/photos/curated/selector";
 import wrapperStyles from "../../sharedStyles/Wrapper.module.css";
+import textStyles from "../../sharedStyles/Text.module.css";
 
 function HomePage(): JSX.Element {
   const dispatch = useDispatch();
   const photoSelector = useSelector(selectCuratedPhotos);
+  const { t } = useTranslation();
 
   const headerPhotoIdx = Math.floor(Math.random() * 12);
 
@@ -28,14 +31,19 @@ function HomePage(): JSX.Element {
     <>
       <Navbar isHomePage={true} />
       <HeroHeader photo={headerPhoto} />
-      <div
+      <main
         className={`${wrapperStyles.maxWidth} ${wrapperStyles.horizontalPadding} mobile-mt-20 tablet-mt-30 desktop-mt-30 mb-30`}
       >
+        <h4
+          className={`${textStyles["text"]} ${textStyles["size-h23"]} ${textStyles["color-midnight2C343E"]} mt-15 mb-30 ${textStyles["noLineHeight"]}`}
+        >
+          {t("pages.home.mainHeader")}
+        </h4>
         <PhotoGrid
           selector={selectCuratedPhotos}
           loadActionCreator={loadCuratedPhotos}
         />
-      </div>
+      </main>
     </>
   );
 }

@@ -10,7 +10,11 @@
     }
   },
   "pages": {
-    "home": {},
-    "search": {}
+    "home": {
+      "mainHeader": "Бесплатные стоковые фото"
+    },
+    "search": {
+      "mainHeader": "Фото {{searchString}}"
+    }
   }
 }

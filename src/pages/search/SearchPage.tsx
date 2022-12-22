@@ -10,13 +10,14 @@ import {
 } from "../../redux/actionCreators/searchActionCreators";
 import selectSearchPhotos from "../../redux/reducers/photos/search/selector";
 import wrapperStyles from "../../sharedStyles/Wrapper.module.css";
+import textStyles from "../../sharedStyles/Text.module.css";
 
 function SearchPage(): JSX.Element {
   const dispatch = useDispatch();
   const params = useParams();
   const searchString = params["*"]!.split("/")[0];
 
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   console.log(i18n.language);
 
@@ -34,10 +35,14 @@ function SearchPage(): JSX.Element {
   return (
     <>
       <Navbar isHomePage={false} />
-      {searchString}
       <div
         className={`${wrapperStyles.maxWidth} ${wrapperStyles.horizontalPadding} mobile-mt-20 tablet-mt-30 desktop-mt-30 mb-30`}
       >
+        <h4
+          className={`${textStyles["text"]} ${textStyles["size-h49"]} ${textStyles["size-h28-mobile"]} ${textStyles["color-midnight2C343E"]} mt-50 mb-30 ${textStyles["noLineHeight"]}`}
+        >
+          {`${t("pages.search.mainHeader", { searchString })}`}
+        </h4>
         <PhotoGrid
           selector={selectSearchPhotos}
           loadActionCreator={loadActionCreator}
