@@ -1,5 +1,6 @@
 import { AnyAction, combineReducers } from "@reduxjs/toolkit";
 import curatedPhotosReducer from "./photos/curated/reducer";
+import favoritePhotosReducer from "./photos/favorite/reducer";
 import searchPhotosReducer from "./photos/search/reducer";
 
 const initial = {};
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
   app: appReducer,
   curatedPhotos: curatedPhotosReducer,
   searchPhotos: searchPhotosReducer,
+  favoritePhotos: favoritePhotosReducer,
 });
 
 export type AppState = ReturnType<typeof rootReducer>;
