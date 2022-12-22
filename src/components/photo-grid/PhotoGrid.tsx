@@ -1,5 +1,5 @@
 import { AnyAction } from "@reduxjs/toolkit";
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Photo } from "../../api/api";
 import { PhotosState } from "../../redux/reducers/photos/interfaces";
@@ -12,16 +12,59 @@ export interface PhotoGridProps {
   selector: (state: AppState) => PhotosState;
 }
 
+enum ScreenSize {
+  Desktop = 1,
+  Mobile,
+}
+
 export default function PhotoGrid(props: PhotoGridProps): JSX.Element {
+  const [screenSize, setScreenSize] = useState<ScreenSize>();
+  const [columns, setColumns] = useState<Array<Array<Photo>>>([[], []]);
   const selectPhotos = useSelector(props.selector);
   const dispatch = useDispatch();
+  const observedElements = useRef<Array<Element | null>>([]);
 
   const photos = selectPhotos.photos;
 
-  let colNum = 3;
-  let columns: Photo[][] = [[], [], []];
+  function handleResize() {
+    if (window.innerWidth > 650 && screenSize !== ScreenSize.Desktop) {
+      setScreenSize(ScreenSize.Desktop);
+    } else if (window.innerWidth <= 650 && screenSize !== ScreenSize.Mobile) {
+      setScreenSize(ScreenSize.Mobile);
+    } else {
+      setScreenSize(ScreenSize.Desktop);
+    }
+  }
 
-  const observedElements = useRef<Array<Element | null>>([]);
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    console.log("lol");
+    if (screenSize === ScreenSize.Desktop) {
+      setColumns(populateColumns(photos, 3));
+    } else {
+      setColumns(populateColumns(photos, 2));
+    }
+  }, [screenSize, photos]);
+
+  function populateColumns(photoArr: Photo[], colNum: number = 3) {
+    const tempColumns = new Array<Array<Photo>>(colNum);
+
+    for (let i = 0; i < colNum; i++) {
+      tempColumns[i] = [];
+    }
+
+    photoArr.forEach((photo, i) => {
+      tempColumns[i % tempColumns.length][Math.floor(i / tempColumns.length)] =
+        photo;
+    });
+
+    return tempColumns;
+  }
 
   const observerHandler = useCallback(
     (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
@@ -51,10 +94,6 @@ export default function PhotoGrid(props: PhotoGridProps): JSX.Element {
     observedElements.current.forEach((el) => {
       if (el) observer.observe(el);
     });
-  });
-
-  photos.forEach((photo, i) => {
-    columns[i % colNum][Math.floor(i / colNum)] = photo;
   });
 
   return (
