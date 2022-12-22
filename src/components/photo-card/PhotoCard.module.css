@@ -45,10 +45,11 @@
 
 .info {
   position: absolute;
-  -webkit-transition: all .2s,-webkit-transform .2s ease-in-out 0s;
-  transition: all .2s,-webkit-transform .2s ease-in-out 0s;
-  transition: all .2s,transform .2s ease-in-out 0s;
-  transition: all .2s,transform .2s ease-in-out 0s,-webkit-transform .2s ease-in-out 0s;
+  -webkit-transition: all 0.2s, -webkit-transform 0.2s ease-in-out 0s;
+  transition: all 0.2s, -webkit-transform 0.2s ease-in-out 0s;
+  transition: all 0.2s, transform 0.2s ease-in-out 0s;
+  transition: all 0.2s, transform 0.2s ease-in-out 0s,
+    -webkit-transform 0.2s ease-in-out 0s;
   display: -webkit-box;
   display: flex;
   bottom: 0;
@@ -58,18 +59,24 @@
   color: #fff;
 }
 
-.card:hover .info .collect, .card:hover .info .like, .card:hover .info .download {
-  opacity: .8;
+.card:hover .info .collect,
+.card:hover .info .like,
+.card:hover .info .download {
+  opacity: 0.8;
   width: 40px;
-  -webkit-transition-delay: .1s;
-  transition-delay: .1s;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
 }
 
-.card:hover .info .collect:hover, .card:hover .info .like:hover, .card:hover .info .download:hover {
+.card:hover .info .collect:hover,
+.card:hover .info .like:hover,
+.card:hover .info .download:hover {
   opacity: 1;
 }
 
-.info .collect, .info .like, .info .download {
+.info .collect,
+.info .like,
+.info .download {
   opacity: 0;
   width: 0;
   overflow: hidden;
@@ -165,4 +172,3 @@
 .button-text-white .svg-icon svg {
   fill: #fff;
 }
-

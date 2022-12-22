@@ -12,7 +12,4 @@ export interface RemoveFavoriteAction {
   photo: Photo;
 }
 
-
-export type FavoritePhotosAction =
-  | AddFavoriteAction
-  | RemoveFavoriteAction;
+export type FavoritePhotosAction = AddFavoriteAction | RemoveFavoriteAction;

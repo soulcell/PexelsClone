@@ -5,7 +5,7 @@ export interface FavoritePhotosState {
 }
 
 const initialState: FavoritePhotosState = {
-  photoIds: new Set<number>()
+  photoIds: new Set<number>(),
 };
 
 export default function favoritePhotosReducer(
@@ -14,14 +14,14 @@ export default function favoritePhotosReducer(
 ): FavoritePhotosState {
   switch (action.type) {
     case actions.ADD_FAVORITE:
-      state.photoIds.add(action.photo.id)
+      state.photoIds.add(action.photo.id);
       return {
-        ...state
+        ...state,
       };
     case actions.REMOVE_FAVORITE:
-      state.photoIds.delete(action.photo.id)
+      state.photoIds.delete(action.photo.id);
       return {
-        ...state
+        ...state,
       };
     default:
       return state;
