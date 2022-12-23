@@ -14,7 +14,8 @@
       "mainHeader": "Free stock photos"
     },
     "search": {
-      "mainHeader": "Free {{searchString}} photos"
+      "mainHeader": "Free {{searchString}} photos",
+      "notFound": "We couldn’t find anything for {{searchString}}.\nTry to refine your search."
     }
   }
 }

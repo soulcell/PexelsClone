@@ -14,7 +14,8 @@
       "mainHeader": "Бесплатные стоковые фото"
     },
     "search": {
-      "mainHeader": "Фото {{searchString}}"
+      "mainHeader": "Фото {{searchString}}",
+      "notFound": "Нет результатов по запросу «{{searchString}}».\nПопробуйте уточнить поисковой запрос."
     }
   }
 }
