@@ -24,6 +24,11 @@ export default function searchPhotosReducer(
   action: actions.SearchPhotosAction
 ): SearchPhotosState {
   switch (action.type) {
+    case actions.LOAD_SEARCH_PHOTOS:
+      return {
+        ...state,
+        searchString: action.searchString,
+      };
     case actions.LOAD_SEARCH_PHOTOS_REQUEST:
       return {
         ...state,

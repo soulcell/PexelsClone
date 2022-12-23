@@ -1,10 +1,13 @@
 import { useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import selectSearchPhotos from "../../redux/reducers/photos/search/selector";
 import styles from "./Searchbar.module.css";
 
 export default function Searchbar(): JSX.Element {
-  const [searchString, setSearchString] = useState("");
+  const initialSearchString = useSelector(selectSearchPhotos).searchString;
+  const [searchString, setSearchString] = useState(initialSearchString);
 
   const { t } = useTranslation();
   const navigate = useNavigate();
@@ -31,6 +34,7 @@ export default function Searchbar(): JSX.Element {
       >
         <div className={styles.container}>
           <input
+            defaultValue={initialSearchString}
             className={styles.input}
             type="search"
             autoCapitalize="none"
