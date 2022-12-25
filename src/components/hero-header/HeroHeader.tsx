@@ -3,6 +3,7 @@ import styles from "./HeroHeader.module.css";
 import textStyles from "../../sharedStyles/Text.module.css";
 import { Photo } from "../../api/api";
 import { useTranslation } from "react-i18next";
+import { useEffect, useState } from "react";
 
 export interface HeroHeaderProps {
   photo?: Photo;
@@ -23,6 +24,7 @@ export default function HeroHeader({ photo }: HeroHeaderProps): JSX.Element {
             {t("components.heroHeader.welcome")}
           </h1>
           <Searchbar></Searchbar>
+          <HeroHeaderTrending />
         </div>
         {photo && (
           <>
@@ -37,6 +39,55 @@ export default function HeroHeader({ photo }: HeroHeaderProps): JSX.Element {
           </>
         )}
       </header>
+    </>
+  );
+}
+
+function HeroHeaderTrending(): JSX.Element {
+  const { t } = useTranslation();
+  const [trendingSelections, setTrendingSelections] = useState<string[]>([]);
+
+  useEffect(() => {
+    const trendingSelectionIds = new Set<number>();
+    while (trendingSelectionIds.size < 7) {
+      trendingSelectionIds.add(Math.floor(Math.random() * 40));
+    }
+
+    setTrendingSelections(
+      [...trendingSelectionIds].map((i) => t(`trending.${i}`))
+    );
+  }, []);
+
+  return (
+    <>
+      <div className={`${styles.trending} m-0 mt-30`}>
+        <span
+          className={`${textStyles["text"]} ${textStyles["size-p16"]} ${textStyles["weight-semibold"]} ${textStyles["color-whiteFFFFFF"]} m-0 mr-8 ${styles["trendingText"]} ${textStyles["inline"]}`}
+        >
+          {t("components.heroHeader.trending")}
+        </span>
+        <ul className={`${styles.trendingList}`}>
+          {trendingSelections.map((name, i, arr) => (
+            <li>
+              <a
+                className={`${textStyles["text"]} ${textStyles["size-p16"]} ${textStyles["weight-semibold"]} ${textStyles["color-whiteFFFFFF"]} m-0 ${textStyles["inline"]} clickable`}
+                href={`/search/${name}`}
+              >
+                <span
+                  className={`${textStyles["text"]} ${textStyles["size-inherit"]} ${textStyles["size-inherit-mobile"]} ${textStyles["weight-inherit"]} ${textStyles["color-inherit"]} m-0 ${textStyles["inline"]}`}
+                >
+                  {name}
+                </span>
+              </a>
+              <span
+                className={`${textStyles["text"]} ${textStyles["size-p16"]} ${textStyles["color-whiteFFFFFF"]} m-0 ${textStyles["inline"]}`}
+              >
+                {i !== arr.length - 1 && ",\u00A0"}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
     </>
   );
 }

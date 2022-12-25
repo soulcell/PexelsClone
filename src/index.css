@@ -78,6 +78,10 @@ textarea {
   margin-bottom: 30px;
 }
 
+.mr-8 {
+  margin-right: 8px;
+}
+
 @media (min-width: 901px) {
   .desktop-mr-30 {
     margin-right: 30px;

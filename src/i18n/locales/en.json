@@ -3,7 +3,7 @@
     "heroHeader": {
       "welcome": "The best free stock photos, royalty free images & videos shared by creators.",
       "author": "Photo by",
-      "trending": "Trending"
+      "trending": "Trending:"
     },
     "searchbar": {
       "placeholder": "Search for free photos"
@@ -17,5 +17,48 @@
       "mainHeader": "Free {{searchString}} photos",
       "notFound": "We couldn’t find anything for {{searchString}}.\nTry to refine your search."
     }
-  }
+  },
+  "trending": [
+    "Chiristmas",
+    "Chiristmas tree",
+    "Winter",
+    "New Year",
+    "AI",
+    "Food",
+    "Technology",
+    "Forest",
+    "Sky",
+    "Landscape",
+    "Ocean",
+    "Beach",
+    "Space",
+    "Dark",
+    "Flowers",
+    "Nature",
+    "Car",
+    "Animal",
+    "Sunset",
+    "Mountain",
+    "Tree",
+    "Code",
+    "Water",
+    "Money",
+    "Office",
+    "Desert",
+    "Jungle",
+    "Color",
+    "Ice",
+    "Pet",
+    "Clouds",
+    "Macro",
+    "River",
+    "BW",
+    "Garden",
+    "Old",
+    "Art",
+    "Abstract",
+    "Portrait",
+    "Street",
+    "Cat"
+  ]
 }

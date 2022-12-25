@@ -33,6 +33,28 @@
   object-fit: cover;
 }
 
+.trending {
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.trending .trendingText {
+  display: inline-block;
+  color: hsla(0, 0%, 100%, 0.7);
+}
+
+.trending .trendingList {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.trending li {
+  display: inline-block;
+}
+
 .attribution {
   position: absolute;
   right: 20px;
