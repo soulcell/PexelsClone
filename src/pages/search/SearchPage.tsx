@@ -11,6 +11,7 @@ import {
 import selectSearchPhotos from "../../redux/reducers/photos/search/selector";
 import wrapperStyles from "../../sharedStyles/Wrapper.module.css";
 import textStyles from "../../sharedStyles/Text.module.css";
+import Loading from "../../components/loader/Loading";
 
 function SearchPage(): JSX.Element {
   const dispatch = useDispatch();
@@ -50,6 +51,7 @@ function SearchPage(): JSX.Element {
           selector={selectSearchPhotos}
           loadActionCreator={loadActionCreator}
         />
+        {searchResults.loading && <Loading />}
       </div>
     </>
   );

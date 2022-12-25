@@ -9,6 +9,7 @@ import { loadCuratedPhotos } from "../../redux/actionCreators/curatedActionCreat
 import selectCuratedPhotos from "../../redux/reducers/photos/curated/selector";
 import wrapperStyles from "../../sharedStyles/Wrapper.module.css";
 import textStyles from "../../sharedStyles/Text.module.css";
+import Loading from "../../components/loader/Loading";
 
 function HomePage(): JSX.Element {
   const dispatch = useDispatch();
@@ -43,6 +44,7 @@ function HomePage(): JSX.Element {
           selector={selectCuratedPhotos}
           loadActionCreator={loadCuratedPhotos}
         />
+        {photoSelector.loading && <Loading />}
       </main>
     </>
   );
