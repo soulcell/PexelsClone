@@ -70,13 +70,18 @@ export function fetchSearch(
   query: string,
   page?: number,
   perPage?: number,
-  locale?: string
+  locale?: string,
+  searchOrientation?: string,
+  searchSize?: string
 ): Promise<SearchResponse> {
   const queryString = new URLSearchParams();
   queryString.set("query", query);
   if (page !== undefined) queryString.set("page", page.toString());
   if (perPage !== undefined) queryString.set("per_page", perPage.toString());
   if (locale) queryString.set("locale", locale.toString());
+  if (searchOrientation)
+    queryString.set("orientation", searchOrientation.toString());
+  if (searchSize) queryString.set("size", searchSize.toString());
   return fetch(API_BASE_URL + "search?" + queryString, {
     headers: { Authorization: API_KEY },
   }).then((response) => {

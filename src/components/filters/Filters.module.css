@@ -1,0 +1,23 @@
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+.container.closed {
+  z-index: 0;
+  overflow: hidden;
+}
+
+.grid {
+  display: grid;
+  width: 100%;
+  grid-gap: 30px;
+  gap: 30px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media (min-width: 0) and (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

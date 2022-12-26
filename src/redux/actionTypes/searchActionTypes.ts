@@ -7,6 +7,8 @@ export interface LoadSearchPhotosAction {
   page?: number;
   perPage?: number;
   locale?: string;
+  searchOrientation?: string;
+  searchSize?: string;
 }
 
 export const LOAD_SEARCH_PHOTOS_REQUEST = "LOAD_SEARCH_PHOTOS_REQUEST";
@@ -31,9 +33,23 @@ export interface ClearSearchPhotosAction {
   type: typeof CLEAR_SEARCH_PHOTOS;
 }
 
+export const SET_SEARCH_ORIENTATION = "SET_SEARCH_ORIENTATION";
+export interface SetSearchOrientationAction {
+  type: typeof SET_SEARCH_ORIENTATION;
+  searchOrientation: string;
+}
+
+export const SET_SEARCH_SIZE = "SET_SEARCH_SIZE";
+export interface SetSearchSizeAction {
+  type: typeof SET_SEARCH_SIZE;
+  searchSize: string;
+}
+
 export type SearchPhotosAction =
   | LoadSearchPhotosAction
   | LoadSearchPhotosRequestAction
   | LoadSearchPhotosSuccessAction
   | LoadSearchPhotosFailureAction
-  | ClearSearchPhotosAction;
+  | ClearSearchPhotosAction
+  | SetSearchOrientationAction
+  | SetSearchSizeAction;

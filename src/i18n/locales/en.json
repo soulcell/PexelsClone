@@ -10,6 +10,20 @@
     },
     "languageSelector": {
       "title": "Language"
+    },
+    "filters": {
+      "orientation": {
+        "all": "All Orientations",
+        "horizontal": "Horizontal",
+        "portrait": "Vertical",
+        "square": "Square"
+      },
+      "size": {
+        "all": "All Sizes",
+        "large": "Large",
+        "medium": "Medium",
+        "small": "Small"
+      }
     }
   },
   "pages": {

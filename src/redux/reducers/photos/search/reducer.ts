@@ -8,6 +8,9 @@ export interface SearchPhotosState {
   photos: Photo[];
   currentPage: number;
   hasMore: boolean;
+  searchOrientation?: string;
+  searchSize?: string;
+  searchColor?: string;
 }
 
 const initialState: SearchPhotosState = {
@@ -50,6 +53,16 @@ export default function searchPhotosReducer(
       };
     case actions.CLEAR_SEARCH_PHOTOS:
       return initialState;
+    case actions.SET_SEARCH_ORIENTATION:
+      return {
+        ...state,
+        searchOrientation: action.searchOrientation,
+      };
+    case actions.SET_SEARCH_SIZE:
+      return {
+        ...state,
+        searchSize: action.searchSize,
+      };
     default:
       return state;
   }

@@ -16,7 +16,7 @@ export default function LanguageSelector(): JSX.Element {
         onSelectedValueChanged={handleChange}
       >
         <DropdownItem title="English" value="en-US" />
-        <DropdownItem title="Russian" value="ru-RU" defaultSelected={true} />
+        <DropdownItem title="Русский" value="ru-RU" defaultSelected={true} />
       </Dropdown>
     </>
   );

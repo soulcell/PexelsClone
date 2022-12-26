@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -12,21 +12,27 @@ import selectSearchPhotos from "../../redux/reducers/photos/search/selector";
 import wrapperStyles from "../../sharedStyles/Wrapper.module.css";
 import textStyles from "../../sharedStyles/Text.module.css";
 import Loading from "../../components/loader/Loading";
+import Filters from "../../components/filters/Filters";
 
 function SearchPage(): JSX.Element {
   const dispatch = useDispatch();
   const params = useParams();
   const searchString = params["*"]!.split("/")[0];
-  const searchResults = useSelector(selectSearchPhotos);
+  const searchSelector = useSelector(selectSearchPhotos);
 
   const { t, i18n } = useTranslation();
 
-  console.log(i18n.language);
-
   const loadActionCreator = useCallback(
     (page: number) =>
-      loadSearchPhotos(searchString, page, undefined, i18n.language),
-    [searchString]
+      loadSearchPhotos(
+        searchString,
+        page,
+        undefined,
+        i18n.language,
+        searchSelector.searchOrientation,
+        searchSelector.searchSize
+      ),
+    [searchString, searchSelector.searchOrientation, searchSelector.searchSize]
   );
 
   useEffect(() => {
@@ -43,15 +49,16 @@ function SearchPage(): JSX.Element {
         <h4
           className={`${textStyles["text"]} ${textStyles["size-h49"]} ${textStyles["size-h28-mobile"]} ${textStyles["color-midnight2C343E"]} mt-50 mb-30 ${textStyles["noLineHeight"]}`}
         >
-          {!searchResults.loading && !searchResults.photos.length
+          {!searchSelector.loading && !searchSelector.photos.length
             ? t("pages.search.notFound", { searchString })
             : t("pages.search.mainHeader", { searchString })}
         </h4>
+        <Filters />
         <PhotoGrid
           selector={selectSearchPhotos}
           loadActionCreator={loadActionCreator}
         />
-        {searchResults.loading && <Loading />}
+        {searchSelector.loading && <Loading />}
       </div>
     </>
   );

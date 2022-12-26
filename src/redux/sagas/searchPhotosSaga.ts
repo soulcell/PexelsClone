@@ -9,10 +9,20 @@ function* onLoadSearchPhotos({
   page,
   perPage,
   locale,
+  searchOrientation,
+  searchSize,
 }: actionTypes.LoadSearchPhotosAction) {
   try {
     yield put(actionCreators.loadSearchPhotosRequest());
-    const data = yield* call(fetchSearch, searchString, page, perPage, locale);
+    const data = yield* call(
+      fetchSearch,
+      searchString,
+      page,
+      perPage,
+      locale,
+      searchOrientation,
+      searchSize
+    );
     yield put(actionCreators.loadSearchPhotosSuccess(data));
   } catch (error) {
     yield put(actionCreators.loadSearchPhotosFailure(error as Error));

@@ -19,15 +19,17 @@ export interface DropdownProps {
 
 export default function Dropdown(props: DropdownProps): JSX.Element {
   const [isOpen, setOpen] = useState(false);
-  const [values, setValues] = useState<any[]>([]);
   const [selectedValue, setSelectedValue] = useState<any>();
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [title, setTitle] = useState(props.title);
 
   useEffect(() => {
-    if (values) {
-      setSelectedValue(values[selectedIndex]);
+    let el = Children.toArray(props.children)[selectedIndex];
+    if (isValidElement<DropdownItemProps>(el)) {
+      setSelectedValue(el.props.value);
+      setTitle(el.props.title);
     }
-  }, [selectedIndex]);
+  }, [selectedIndex, props.children]);
 
   useEffect(() => {
     if (props.onSelectedValueChanged) {
@@ -52,7 +54,6 @@ export default function Dropdown(props: DropdownProps): JSX.Element {
       }
     });
     if (values) {
-      setValues(values);
       setSelectedIndex(idx);
     }
 
@@ -64,13 +65,13 @@ export default function Dropdown(props: DropdownProps): JSX.Element {
     <>
       <div ref={triggerRef} className={`${styles["outerDiv"]}`}>
         <div className={`${styles["wrapper"]} ${isOpen && styles["isOpen"]}`}>
-          <div className={`${styles["inline-wrapper"]}`}>
+          <div className={`${styles["inlineWrapper"]}`}>
             <button
               onClick={() => setOpen(!isOpen)}
               className={`${btnStyles["button"]} ${btnStyles["white"]} ${styles["toggleButton"]} px-20`}
             >
               <span className={`${isOpen && btnStyles["rotateIcon"]}`}>
-                <span className={btnStyles["text"]}>{props.title}</span>
+                <span className={btnStyles["text"]}>{title}</span>
                 <ArrowIcon />
               </span>
             </button>

@@ -43,7 +43,6 @@ export default function PhotoGrid(props: PhotoGridProps): JSX.Element {
   }, []);
 
   useEffect(() => {
-    console.log("lol");
     if (screenSize === ScreenSize.Desktop) {
       setColumns(populateColumns(photos, 3));
     } else {

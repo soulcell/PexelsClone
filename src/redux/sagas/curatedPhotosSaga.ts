@@ -11,7 +11,7 @@ function* onLoadCuratedPhotos({ page }: actionTypes.LoadCuratedPhotosAction) {
     yield put(actionCreators.loadCuratedPhotosSuccess(data));
   } catch (error) {
     console.log(error);
-    //yield put(actionCreators.loadCuratedPhotosFailure(error as Error));
+    yield put(actionCreators.loadCuratedPhotosFailure(error as Error));
   }
 }
 

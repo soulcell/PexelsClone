@@ -10,6 +10,20 @@
     },
     "languageSelector": {
       "title": "Язык"
+    },
+    "filters": {
+      "orientation": {
+        "all": "Все варианты ориентации",
+        "horizontal": "Горизонтальная",
+        "portrait": "Вертикальная",
+        "square": "Квадрат"
+      },
+      "size": {
+        "all": "Все размеры",
+        "large": "Большой",
+        "medium": "Средний",
+        "small": "Маленький"
+      }
     }
   },
   "pages": {
