@@ -102,12 +102,13 @@ export default function PhotoGrid(props: PhotoGridProps): JSX.Element {
       >
         {columns.map((col, colNum) => {
           return (
-            <div className={styles.column}>
+            <div key={colNum} className={styles.column}>
               {col.map((photo, i, arr) => {
                 if (i === arr.length - 1) {
                   return (
                     <>
                       <div
+                        key={photo.id}
                         className={styles.item}
                         ref={(el) => (observedElements.current[colNum] = el)}
                       >
@@ -118,7 +119,7 @@ export default function PhotoGrid(props: PhotoGridProps): JSX.Element {
                 }
                 return (
                   <>
-                    <div className={styles.item}>
+                    <div key={photo.id} className={styles.item}>
                       <PhotoCard photo={photo} />
                     </div>
                   </>

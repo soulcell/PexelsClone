@@ -44,7 +44,7 @@ export default function HeroHeader({ photo }: HeroHeaderProps): JSX.Element {
 }
 
 function HeroHeaderTrending(): JSX.Element {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [trendingSelections, setTrendingSelections] = useState<string[]>([]);
 
   useEffect(() => {
@@ -56,7 +56,7 @@ function HeroHeaderTrending(): JSX.Element {
     setTrendingSelections(
       [...trendingSelectionIds].map((i) => t(`trending.${i}`))
     );
-  }, []);
+  }, [i18n.language]);
 
   return (
     <>
@@ -68,7 +68,7 @@ function HeroHeaderTrending(): JSX.Element {
         </span>
         <ul className={`${styles.trendingList}`}>
           {trendingSelections.map((name, i, arr) => (
-            <li>
+            <li key={i}>
               <a
                 className={`${textStyles["text"]} ${textStyles["size-p16"]} ${textStyles["weight-semibold"]} ${textStyles["color-whiteFFFFFF"]} m-0 ${textStyles["inline"]} clickable`}
                 href={`/search/${name}`}

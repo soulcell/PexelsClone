@@ -46,7 +46,6 @@ export interface SearchResponse {
 
 const options: RequestInit = {
   headers: { Autorization: API_KEY },
-  mode: "no-cors",
 };
 
 export function fetchCurated(
