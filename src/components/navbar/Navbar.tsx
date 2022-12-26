@@ -3,6 +3,10 @@ import Searchbar from "../searchbar/Searchbar";
 import styles from "./Navbar.module.css";
 import stylesWrapper from "../../sharedStyles/Wrapper.module.css";
 import { Link } from "react-router-dom";
+import Dropdown from "../dropdown/Dropdown";
+import DropdownItem from "../dropdown/DropdownItem";
+import { useTranslation } from "react-i18next";
+import LanguageSelector from "../language-selector/LanguageSelector";
 
 export interface NavbarProps {
   isHomePage: boolean;
@@ -55,7 +59,9 @@ export default function Navbar({
             <NavbarLogo isDark={!isFixed} />
             {isFixed || <Searchbar />}
           </div>
-          <div className={styles.right}></div>
+          <div className={styles.right}>
+            <LanguageSelector />
+          </div>
         </nav>
       </div>
     </>

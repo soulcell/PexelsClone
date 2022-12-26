@@ -1,0 +1,106 @@
+.outerDiv {
+  display: inline-block;
+}
+
+.fullWidth {
+  display: block;
+  width: 100%;
+}
+
+.fullWidth .inlineWrapper,
+.fullWidth .wrapper {
+  width: 100%;
+}
+
+.wrapper {
+  position: relative;
+  display: inline-flex;
+}
+
+.wrapper.isOpen .menu {
+  display: block;
+}
+
+.wrapper:focus-within {
+  border-radius: 6px;
+}
+
+.toggleButton svg {
+  fill: rgb(191, 191, 191);
+}
+
+.toggleButton.active {
+  border-color: rgb(74, 74, 74);
+  background: rgb(237, 237, 237);
+}
+
+.toggleButton.active svg {
+  fill: rgb(74, 74, 74);
+}
+
+.toggleButton span {
+  justify-content: unset;
+  width: 100%;
+  text-align: left;
+  color: rgb(74, 74, 74);
+}
+
+.menu {
+  position: absolute;
+  z-index: 9;
+  display: none;
+  overflow: auto;
+  min-width: 300px;
+  max-width: calc(100vw - 50px);
+  max-height: 50vh;
+  border: 1px solid rgb(223, 223, 224);
+  border-radius: 6px;
+  background: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 3px 5px 1px;
+}
+
+@media (min-width: 0) and (max-width: 650px) {
+  .menu {
+    min-width: 0px;
+  }
+}
+
+@media (max-height: 600px) {
+  .menu {
+    max-height: calc(50vh - 50px);
+  }
+}
+
+.menu,
+.menu > ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+.menu:focus,
+.menu > ul:focus {
+  outline: none;
+}
+
+.menuNoMaxHeight {
+  max-height: none;
+}
+
+.arrowIcon {
+  align-self: flex-end;
+  margin-right: -5px;
+}
+
+.label * {
+  white-space: nowrap;
+}
+
+.menu {
+  position: absolute;
+  margin: 1px 0 0;
+  padding: 0;
+  border: 1px solid #bebebe;
+  max-height: 100px;
+  overflow-y: auto;
+}

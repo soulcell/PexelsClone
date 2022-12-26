@@ -118,6 +118,11 @@ textarea {
   padding-right: 15px;
 }
 
+.px-20 {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 @media (min-width: 901px) {
   .desktop-px-30 {
     padding-left: 30px;

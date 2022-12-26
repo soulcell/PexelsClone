@@ -7,6 +7,9 @@
     },
     "searchbar": {
       "placeholder": "Search for free photos"
+    },
+    "languageSelector": {
+      "title": "Language"
     }
   },
   "pages": {

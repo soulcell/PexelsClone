@@ -7,6 +7,9 @@
     },
     "searchbar": {
       "placeholder": "Поиск бесплатных изображений"
+    },
+    "languageSelector": {
+      "title": "Язык"
     }
   },
   "pages": {

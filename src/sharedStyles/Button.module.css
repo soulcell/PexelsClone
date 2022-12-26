@@ -1,0 +1,633 @@
+.button {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  position: relative;
+  z-index: 0;
+  box-sizing: border-box;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  max-width: 100%;
+  height: 50px;
+  cursor: pointer;
+  transition: background-color 0.1s, border ease-in-out, transform 0.1s,
+    box-shadow 5ms, border-color 0.25s;
+  vertical-align: top;
+  white-space: nowrap;
+  text-decoration: none;
+  letter-spacing: -0.015em;
+  border: 1px solid;
+  border-radius: 6px;
+  outline: none;
+  background: 0 0;
+}
+
+@media (min-width: 0) and (max-width: 650px) {
+  .button {
+    font-size: 16px;
+    height: 40px;
+  }
+}
+
+.button,
+.button > span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button > span {
+  width: 100%;
+}
+
+.button > span > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.button svg {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  transition: fill 0.1s, transform 0.2s ease-in-out;
+}
+
+@media (min-width: 0) and (max-width: 650px) {
+  .button svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.button svg:first-child:not(:last-child) {
+  margin-right: 8px;
+}
+
+.button svg:last-child:not(:first-child) {
+  margin-left: 8px;
+}
+
+.rotateIcon svg:first-child:not(:last-child) {
+  transform: rotate(-180deg);
+}
+
+.rotateIcon svg:last-child:not(:first-child) {
+  transform: rotate(180deg);
+}
+
+.iconSolo {
+  width: 50px;
+}
+
+@media (min-width: 0) and (max-width: 650px) {
+  .iconSolo {
+    width: 40px;
+  }
+}
+
+.iconSolo .rotateIcon svg {
+  transform: rotate(180deg);
+}
+
+.imgixIcon .imgixIconImage {
+  position: relative;
+  overflow: hidden;
+  width: 34px;
+  min-width: 34px;
+  height: 34px;
+  min-height: 34px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: #bfbfbf;
+}
+
+@media (min-width: 0) and (max-width: 650px) {
+  .imgixIcon .imgixIconImage {
+    width: 27px;
+    min-width: 27px;
+    height: 27px;
+    min-height: 27px;
+  }
+}
+
+.imgixIcon .imgixIconImage img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.shadowEffect.hover,
+.shadowEffect:hover {
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
+}
+
+.number {
+  display: inline-block;
+  margin-left: 8px;
+}
+
+.block {
+  display: flex;
+}
+
+.block,
+.button svg,
+.number,
+.text {
+  line-height: 1.3;
+  z-index: 1;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+@media (min-width: 0) and (max-width: 650px) {
+  .fullWidthMobile {
+    width: 100%;
+  }
+}
+
+@media (min-width: 651px) and (max-width: 900px) {
+  .fullWidthTablet {
+    width: 100%;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1440px) {
+  .fullWidthDesktop {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1441px) {
+  .fullWidthOversized {
+    width: 100%;
+  }
+}
+
+@media (min-width: 0) and (max-width: 650px) {
+  .hideTextMobile .text {
+    display: none;
+  }
+
+  .hideTextMobile svg:first-child:not(:last-child) {
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 651px) and (max-width: 900px) {
+  .hideTextTablet .text {
+    display: none;
+  }
+
+  .hideTextTablet svg:first-child:not(:last-child) {
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1440px) {
+  .hideTextDesktop .text {
+    display: none;
+  }
+
+  .hideTextDesktop svg:first-child:not(:last-child) {
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 1441px) {
+  .hideTextOversized .text {
+    display: none;
+  }
+
+  .hideTextOversized svg:first-child:not(:last-child) {
+    margin-right: 0;
+  }
+}
+
+.white {
+  color: #000;
+  border-color: #dfdfe0;
+  background: #fff;
+}
+
+.white svg {
+  fill: #7f7f7f;
+}
+
+.white .number {
+  color: #7f7f7f;
+}
+
+.white.hover,
+.white:hover {
+  color: #000;
+  border-color: #7f7f7f;
+}
+
+.white.hover svg,
+.white:hover svg {
+  fill: #7f7f7f;
+}
+
+.white:active {
+  color: #4a4a4a;
+  border-color: #4a4a4a;
+}
+
+.white:active svg {
+  fill: #4a4a4a;
+}
+
+.green {
+  color: #fff;
+  border-color: #05a081;
+  background: #05a081;
+}
+
+.green svg {
+  fill: #fff;
+}
+
+.green:hover {
+  border-color: #05a081;
+}
+
+.green:hover svg {
+  fill: #fff;
+}
+
+.green:active,
+.green:focus {
+  border-color: #05a081;
+  background: #04886e;
+}
+
+.green.hover,
+.green:hover {
+  background: #059377;
+}
+
+.midnight {
+  color: #fff;
+  border-color: #2c343e;
+  background: #2c343e;
+}
+
+.midnight svg {
+  fill: #fff;
+}
+
+.midnight:hover {
+  border-color: #2c343e;
+}
+
+.midnight:hover svg {
+  fill: #fff;
+}
+
+.midnight:active,
+.midnight:focus {
+  border-color: #2c343e;
+  background: #252c35;
+}
+
+.midnight.hover,
+.midnight:hover {
+  background: #283039;
+}
+
+.purple {
+  color: #fff;
+  border-color: #7831ed;
+  background: #7831ed;
+}
+
+.purple svg {
+  fill: #fff;
+}
+
+.purple:hover {
+  border-color: #7831ed;
+}
+
+.purple:hover svg {
+  fill: #fff;
+}
+
+.purple:active,
+.purple:focus {
+  border-color: #7831ed;
+  background: #662ac9;
+}
+
+.purple.hover,
+.purple:hover {
+  background: #6e2dda;
+}
+
+.red {
+  color: #fff;
+  border-color: #d3405c;
+  background: #d3405c;
+}
+
+.red svg {
+  fill: #fff;
+}
+
+.red:hover {
+  border-color: #d3405c;
+}
+
+.red:hover svg {
+  fill: #fff;
+}
+
+.red:active,
+.red:focus {
+  border-color: #d3405c;
+  background: #b3364e;
+}
+
+.red.hover,
+.red:hover {
+  background: #c23b55;
+}
+
+.black {
+  color: #fff;
+  border-color: currentColor;
+  background-color: #000;
+}
+
+.black svg {
+  color: inherit;
+  fill: currentColor;
+}
+
+.black.hover,
+.black:hover {
+  color: #000;
+  background-color: #fff;
+}
+
+.black:active {
+  color: #4a4a4a;
+  background-color: #fff;
+}
+
+.greyMinus3 {
+  color: #7f7f7f;
+  border-color: #dfdfe0;
+  background: #f7f7f7;
+}
+
+.greyMinus3 svg {
+  fill: #bfbfbf;
+}
+
+.greyMinus3:active {
+  background: #dfdfe0;
+}
+
+.greyMinus3.hover,
+.greyMinus3:hover {
+  border-color: #d4d4d5;
+}
+
+.greyMinus3.hover svg,
+.greyMinus3:hover svg {
+  fill: #7f7f7f;
+}
+
+.greyMinus3:active,
+.greyMinus3:focus {
+  border-color: #bfbfbf;
+}
+
+.greyMinus2 {
+  color: #7f7f7f;
+  border-color: #bfbfbf;
+  background: #dfdfe0;
+}
+
+.greyMinus2 svg {
+  fill: #7f7f7f;
+}
+
+.greyMinus2:active {
+  background: #bfbfbf;
+}
+
+.greyMinus2.hover,
+.greyMinus2:hover {
+  border-color: #b5b5b5;
+}
+
+.greyMinus2.hover svg,
+.greyMinus2:hover svg {
+  fill: #7f7f7f;
+}
+
+.greyMinus2:active,
+.greyMinus2:focus {
+  border-color: #7f7f7f;
+}
+
+.shadowPurple.hover,
+.shadowPurple:hover {
+  box-shadow: 0 3px 5px rgba(120, 49, 237, 0.05);
+}
+
+.shadowPurple:focus {
+  box-shadow: 0 0 0 5px rgba(120, 49, 237, 0.05);
+}
+
+.colorOverrideWhite {
+  color: #fff;
+}
+
+.colorOverrideWhite svg,
+.colorOverrideWhite.hover svg,
+.colorOverrideWhite:hover svg {
+  fill: #fff;
+}
+
+.colorOverrideBlack {
+  color: #000;
+}
+
+.colorOverrideBlack svg,
+.colorOverrideBlack.hover svg,
+.colorOverrideBlack:hover svg {
+  fill: #000;
+}
+
+.colorOverrideGreyPlus1 {
+  color: #4a4a4a;
+  border-color: #4a4a4a;
+}
+
+.colorOverrideGreyPlus1 svg {
+  fill: #4a4a4a;
+}
+
+.weightOverrideBold {
+  font-weight: 700;
+}
+
+.weightOverrideSemiBold {
+  font-weight: 600;
+}
+
+.weightOverrideBook,
+.weightOverrideMedium {
+  font-weight: 500;
+}
+
+.disabled {
+  cursor: not-allowed;
+}
+
+.disabled,
+.disabled.hover,
+.disabled:active,
+.disabled:focus,
+.disabled:hover {
+  color: #bfbfbf;
+  border-color: #f7f7f7;
+  background: #f7f7f7;
+}
+
+.disabled svg,
+.disabled.hover svg,
+.disabled:active svg,
+.disabled:focus svg,
+.disabled:hover svg {
+  fill: #bfbfbf;
+}
+
+.social {
+  border: none;
+  border-radius: 50%;
+}
+
+.linkedin {
+  background-color: #e9f3f9;
+}
+
+.linkedin.hover,
+.linkedin:hover {
+  background-color: #d1ecfd;
+}
+
+.linkedin.hover svg,
+.linkedin:hover svg {
+  fill: #4097c6;
+}
+
+.linkedin svg {
+  fill: #1e85bc;
+}
+
+.twitter {
+  background-color: #e8f6fe;
+}
+
+.twitter.hover,
+.twitter:hover {
+  background-color: #d1ecfd;
+}
+
+.twitter.hover svg,
+.twitter:hover svg {
+  fill: #3faff4;
+}
+
+.twitter svg {
+  fill: #1da1f2;
+}
+
+.pinterest {
+  background-color: #fae8e9;
+}
+
+.pinterest.hover,
+.pinterest:hover {
+  background-color: #f2cdce;
+}
+
+.pinterest.hover svg,
+.pinterest:hover svg {
+  fill: #d24247;
+}
+
+.pinterest svg {
+  fill: #ca2127;
+}
+
+.facebook {
+  background-color: #eceff5;
+}
+
+.facebook.hover,
+.facebook:hover {
+  background-color: #dce2ed;
+}
+
+.facebook.hover svg,
+.facebook:hover svg {
+  fill: #5973a9;
+}
+
+.facebook svg {
+  fill: #3c5a9a;
+}
+
+.tumblr {
+  background-color: #eaebed;
+}
+
+.tumblr.hover,
+.tumblr:hover {
+  background-color: #d8dadd;
+}
+
+.tumblr.hover svg,
+.tumblr:hover svg {
+  fill: #4f5a68;
+}
+
+.tumblr svg {
+  fill: #303d4d;
+}
+
+.noBorder {
+  border: none;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.allowTextWrap {
+  height: auto;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  white-space: normal;
+}
+
+.accentOnHover:hover {
+  color: #05a081;
+  border: 2px solid #05a081;
+  background: #f3faf9;
+}
+
+.accentOnHover:hover svg {
+  fill: #05a081;
+}
