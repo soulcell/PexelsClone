@@ -63,12 +63,16 @@ export default function Dropdown(props: DropdownProps): JSX.Element {
 
   return (
     <>
-      <div ref={triggerRef} className={`${styles["outerDiv"]}`}>
+      <div
+        ref={triggerRef}
+        className={`${styles["outerDiv"]} ${styles["fullWidth"]}`}
+      >
         <div className={`${styles["wrapper"]} ${isOpen && styles["isOpen"]}`}>
           <div className={`${styles["inlineWrapper"]}`}>
             <button
               onClick={() => setOpen(!isOpen)}
               className={`${btnStyles["button"]} ${btnStyles["white"]} ${styles["toggleButton"]} px-20`}
+              style={{ width: "100%" }}
             >
               <span className={`${isOpen && btnStyles["rotateIcon"]}`}>
                 <span className={btnStyles["text"]}>{title}</span>

@@ -46,6 +46,7 @@
 }
 
 .menu {
+  top: calc(100% + 8px);
   position: absolute;
   z-index: 9;
   display: none;
@@ -94,13 +95,4 @@
 
 .label * {
   white-space: nowrap;
-}
-
-.menu {
-  position: absolute;
-  margin: 1px 0 0;
-  padding: 0;
-  border: 1px solid #bebebe;
-  max-height: 100px;
-  overflow-y: auto;
 }
