@@ -16,7 +16,7 @@ export default function PhotoCard({ photo }: PhotoCardProps): JSX.Element {
   const favoritePhotos = useSelector(selectFavoritePhotos);
   const dispatch = useDispatch();
 
-  let isLiked = favoritePhotos.photoIds.has(photo.id);
+  let isLiked = favoritePhotos.photoIds.includes(photo.id);
 
   function handleLikeClick() {
     if (!isLiked) {

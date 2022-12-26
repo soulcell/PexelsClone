@@ -1,11 +1,11 @@
 import * as actions from "../../../actionTypes/favoriteActionTypes";
 
 export interface FavoritePhotosState {
-  photoIds: Set<number>;
+  photoIds: number[];
 }
 
 const initialState: FavoritePhotosState = {
-  photoIds: new Set<number>(),
+  photoIds: [],
 };
 
 export default function favoritePhotosReducer(
@@ -14,14 +14,16 @@ export default function favoritePhotosReducer(
 ): FavoritePhotosState {
   switch (action.type) {
     case actions.ADD_FAVORITE:
-      state.photoIds.add(action.photo.id);
       return {
         ...state,
+        photoIds: [...new Set<number>(state.photoIds).add(action.photo.id)],
       };
     case actions.REMOVE_FAVORITE:
-      state.photoIds.delete(action.photo.id);
+      const tempSet = new Set<number>(state.photoIds);
+      tempSet.delete(action.photo.id);
       return {
         ...state,
+        photoIds: [...tempSet],
       };
     default:
       return state;

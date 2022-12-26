@@ -39,7 +39,7 @@ export default function curatedPhotosReducer(
       return {
         ...state,
         loading: false,
-        error: action.error,
+        error: action.error.toString(),
       };
     default:
       return state;
