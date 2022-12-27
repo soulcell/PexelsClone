@@ -26,15 +26,15 @@ export default function PhotoGrid(props: PhotoGridProps): JSX.Element {
 
   const photos = selectPhotos.photos;
 
-  function handleResize() {
-    if (window.innerWidth > 650 && screenSize !== ScreenSize.Desktop) {
+  const handleResize = useCallback(() => {
+    if (window.innerWidth > 900 && screenSize !== ScreenSize.Desktop) {
       setScreenSize(ScreenSize.Desktop);
-    } else if (window.innerWidth <= 650 && screenSize !== ScreenSize.Mobile) {
+    } else if (window.innerWidth <= 900 && screenSize !== ScreenSize.Mobile) {
       setScreenSize(ScreenSize.Mobile);
     } else {
       setScreenSize(ScreenSize.Desktop);
     }
-  }
+  }, [screenSize]);
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
