@@ -13,7 +13,6 @@ function* onLoadSearchPhotos({
   searchSize,
 }: actionTypes.LoadSearchPhotosAction) {
   try {
-    yield put(actionCreators.loadSearchPhotosRequest());
     const data = yield* call(
       fetchSearch,
       searchString,

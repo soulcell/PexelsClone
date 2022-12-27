@@ -30,12 +30,8 @@ export default function searchPhotosReducer(
     case actions.LOAD_SEARCH_PHOTOS:
       return {
         ...state,
-        searchString: action.searchString,
-      };
-    case actions.LOAD_SEARCH_PHOTOS_REQUEST:
-      return {
-        ...state,
         loading: true,
+        searchString: action.searchString,
       };
     case actions.LOAD_SEARCH_PHOTOS_SUCCESS:
       return {

@@ -11,11 +11,6 @@ export interface LoadSearchPhotosAction {
   searchSize?: string;
 }
 
-export const LOAD_SEARCH_PHOTOS_REQUEST = "LOAD_SEARCH_PHOTOS_REQUEST";
-export interface LoadSearchPhotosRequestAction {
-  type: typeof LOAD_SEARCH_PHOTOS_REQUEST;
-}
-
 export const LOAD_SEARCH_PHOTOS_SUCCESS = "LOAD_SEARCH_PHOTOS_SUCCESS";
 export interface LoadSearchPhotosSuccessAction {
   type: typeof LOAD_SEARCH_PHOTOS_SUCCESS;
@@ -47,7 +42,6 @@ export interface SetSearchSizeAction {
 
 export type SearchPhotosAction =
   | LoadSearchPhotosAction
-  | LoadSearchPhotosRequestAction
   | LoadSearchPhotosSuccessAction
   | LoadSearchPhotosFailureAction
   | ClearSearchPhotosAction

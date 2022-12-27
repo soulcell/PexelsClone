@@ -19,12 +19,6 @@ export function loadSearchPhotos(
   };
 }
 
-export function loadSearchPhotosRequest(): actions.LoadSearchPhotosRequestAction {
-  return {
-    type: actions.LOAD_SEARCH_PHOTOS_REQUEST,
-  };
-}
-
 export function loadSearchPhotosSuccess(
   response: SearchResponse
 ): actions.LoadSearchPhotosSuccessAction {
