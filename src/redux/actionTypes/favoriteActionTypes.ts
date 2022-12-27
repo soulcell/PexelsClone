@@ -1,4 +1,4 @@
-import { Photo } from "../../api/api";
+import { Photo } from "../../api/interfaces";
 
 export const ADD_FAVORITE = "ADD_FAVORITE";
 export interface AddFavoriteAction {

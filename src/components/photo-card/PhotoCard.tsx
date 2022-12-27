@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Photo } from "../../api/api";
+import { Photo } from "../../api/interfaces";
 import {
   addFavoritePhoto,
   removeFavoritePhoto,

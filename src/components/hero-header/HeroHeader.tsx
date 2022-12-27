@@ -1,7 +1,7 @@
 import Searchbar from "../searchbar/Searchbar";
 import styles from "./HeroHeader.module.css";
 import textStyles from "../../sharedStyles/Text.module.css";
-import { Photo } from "../../api/api";
+import { Photo } from "../../api/interfaces";
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 

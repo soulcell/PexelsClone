@@ -1,7 +1,7 @@
 import { AnyAction } from "@reduxjs/toolkit";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Photo } from "../../api/api";
+import { Photo } from "../../api/interfaces";
 import { PhotosState } from "../../redux/reducers/photos/interfaces";
 import { AppState } from "../../redux/reducers/rootReducer";
 import PhotoCard from "../photo-card/PhotoCard";

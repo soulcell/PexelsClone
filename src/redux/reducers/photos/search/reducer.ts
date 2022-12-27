@@ -1,4 +1,4 @@
-import { Photo } from "../../../../api/api";
+import { Photo } from "../../../../api/interfaces";
 import * as actions from "../../../actionTypes/searchActionTypes";
 
 export interface SearchPhotosState {

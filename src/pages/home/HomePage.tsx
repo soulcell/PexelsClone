@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
-import { Photo } from "../../api/api";
+import { Photo } from "../../api/interfaces";
 import HeroHeader from "../../components/hero-header/HeroHeader";
 import Navbar from "../../components/navbar/Navbar";
 import PhotoGrid from "../../components/photo-grid/PhotoGrid";

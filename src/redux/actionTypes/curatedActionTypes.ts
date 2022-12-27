@@ -1,4 +1,4 @@
-import { CuratedResponse } from "../../api/api";
+import { CuratedResponse } from "../../api/interfaces";
 
 export const LOAD_CURATED_PHOTOS = "LOAD_CURATED_PHOTOS";
 export interface LoadCuratedPhotosAction {

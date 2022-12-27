@@ -1,4 +1,4 @@
-import { CuratedResponse } from "../../api/api";
+import { CuratedResponse } from "../../api/interfaces";
 import * as actions from "../actionTypes/curatedActionTypes";
 
 export function loadCuratedPhotos(

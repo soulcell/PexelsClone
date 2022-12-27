@@ -1,4 +1,4 @@
-import { SearchResponse } from "../../api/api";
+import { SearchResponse } from "../../api/interfaces";
 
 export const LOAD_SEARCH_PHOTOS = "LOAD_SEARCH_PHOTOS";
 export interface LoadSearchPhotosAction {

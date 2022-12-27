@@ -1,4 +1,4 @@
-import { SearchResponse } from "../../api/api";
+import { SearchResponse } from "../../api/interfaces";
 import * as actions from "../actionTypes/searchActionTypes";
 
 export function loadSearchPhotos(
