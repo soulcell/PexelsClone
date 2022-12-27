@@ -10,6 +10,7 @@ import {
 import styles from "./Dropdown.module.css";
 import btnStyles from "../../sharedStyles/Button.module.css";
 import { DropdownItemProps } from "./DropdownItem";
+import SVG from "../svg/SVG";
 
 export interface DropdownProps {
   title?: string;
@@ -76,7 +77,10 @@ export default function Dropdown(props: DropdownProps): JSX.Element {
             >
               <span className={`${isOpen && btnStyles["rotateIcon"]}`}>
                 <span className={btnStyles["text"]}>{title}</span>
-                <ArrowIcon />
+                <SVG
+                  icon="DropdownArrow"
+                  style={{ alignSelf: "flex-end", marginRight: "-5px" }}
+                />
               </span>
             </button>
             <ul
@@ -102,22 +106,6 @@ export default function Dropdown(props: DropdownProps): JSX.Element {
           </div>
         </div>
       </div>
-    </>
-  );
-}
-
-function ArrowIcon(): JSX.Element {
-  return (
-    <>
-      <svg
-        className={`${styles["arrowIcon"]} m-0`}
-        viewBox="0 0 24 24"
-        width="24"
-        height="24"
-      >
-        <path d="M24 24H0V0h24v24z" fill="none"></path>
-        <path d="M15.88 9.29L12 13.17 8.12 9.29c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41-.39-.38-1.03-.39-1.42 0z"></path>
-      </svg>
     </>
   );
 }
