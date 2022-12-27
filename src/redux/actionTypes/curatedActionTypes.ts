@@ -6,11 +6,6 @@ export interface LoadCuratedPhotosAction {
   page?: number;
 }
 
-export const LOAD_CURATED_PHOTOS_REQUEST = "LOAD_CURATED_PHOTOS_REQUEST";
-export interface LoadCuratedPhotosRequestAction {
-  type: typeof LOAD_CURATED_PHOTOS_REQUEST;
-}
-
 export const LOAD_CURATED_PHOTOS_SUCCESS = "LOAD_CURATED_PHOTOS_SUCCESS";
 export interface LoadCuratedPhotosSuccessAction {
   type: typeof LOAD_CURATED_PHOTOS_SUCCESS;
@@ -25,6 +20,5 @@ export interface LoadCuratedPhotosFailureAction {
 
 export type CuratedPhotosAction =
   | LoadCuratedPhotosAction
-  | LoadCuratedPhotosRequestAction
   | LoadCuratedPhotosSuccessAction
   | LoadCuratedPhotosFailureAction;

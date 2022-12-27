@@ -22,7 +22,7 @@ export default function curatedPhotosReducer(
   action: actions.CuratedPhotosAction
 ): CuratedPhotosState {
   switch (action.type) {
-    case actions.LOAD_CURATED_PHOTOS_REQUEST:
+    case actions.LOAD_CURATED_PHOTOS:
       return {
         ...state,
         loading: true,

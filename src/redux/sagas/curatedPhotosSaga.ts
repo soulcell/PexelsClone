@@ -6,7 +6,6 @@ import * as actionCreators from "../actionCreators/curatedActionCreators";
 
 function* onLoadCuratedPhotos({ page }: actionTypes.LoadCuratedPhotosAction) {
   try {
-    yield put(actionCreators.loadCuratedPhotosRequest());
     const data = yield* call(fetchCurated, page);
     yield put(actionCreators.loadCuratedPhotosSuccess(data));
   } catch (error) {

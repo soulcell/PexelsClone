@@ -10,12 +10,6 @@ export function loadCuratedPhotos(
   };
 }
 
-export function loadCuratedPhotosRequest(): actions.LoadCuratedPhotosRequestAction {
-  return {
-    type: actions.LOAD_CURATED_PHOTOS_REQUEST,
-  };
-}
-
 export function loadCuratedPhotosSuccess(
   response: CuratedResponse
 ): actions.LoadCuratedPhotosSuccessAction {
