@@ -1,15 +1,16 @@
 import { createBrowserRouter, RouteObject } from "react-router-dom";
 import HomePage from "./pages/home/HomePage";
+import Page from "./pages/Page";
 import SearchPage from "./pages/search/SearchPage";
 
 const routes: RouteObject[] = [
   {
     path: "/",
-    element: <HomePage />,
+    element: <Page type="Home" />,
   },
   {
     path: "/search/*",
-    element: <SearchPage />,
+    element: <Page type="Search" />,
   },
 ];
 
