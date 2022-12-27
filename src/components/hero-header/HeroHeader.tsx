@@ -31,6 +31,7 @@ export default function HeroHeader({ photo }: HeroHeaderProps): JSX.Element {
             <img
               className={`${styles.img} m-0`}
               src={photo.src.landscape}
+              alt={photo.alt}
             ></img>
             <HeroHeaderAttribution
               authorName={photo.photographer}
@@ -56,7 +57,7 @@ function HeroHeaderTrending(): JSX.Element {
     setTrendingSelections(
       [...trendingSelectionIds].map((i) => t(`trending.${i}`))
     );
-  }, [i18n.language]);
+  }, [t, i18n.language]);
 
   return (
     <>
