@@ -45,7 +45,7 @@ export interface SearchResponse {
 }
 
 const options: RequestInit = {
-  headers: { Autorization: API_KEY },
+  headers: { Authorization: API_KEY },
 };
 
 export function fetchCurated(
@@ -55,14 +55,14 @@ export function fetchCurated(
   const queryString = new URLSearchParams();
   if (page !== undefined) queryString.set("page", page.toString());
   if (perPage !== undefined) queryString.set("per_page", perPage.toString());
-  return fetch(API_BASE_URL + "curated?" + queryString, {
-    headers: { Authorization: API_KEY },
-  }).then((response) => {
-    if (!response.ok) {
-      throw new Error(response.statusText);
+  return fetch(API_BASE_URL + "curated?" + queryString, options).then(
+    (response) => {
+      if (!response.ok) {
+        throw new Error(response.statusText);
+      }
+      return response.json() as Promise<CuratedResponse>;
     }
-    return response.json() as Promise<CuratedResponse>;
-  });
+  );
 }
 
 export function fetchSearch(
@@ -81,12 +81,12 @@ export function fetchSearch(
   if (searchOrientation)
     queryString.set("orientation", searchOrientation.toString());
   if (searchSize) queryString.set("size", searchSize.toString());
-  return fetch(API_BASE_URL + "search?" + queryString, {
-    headers: { Authorization: API_KEY },
-  }).then((response) => {
-    if (!response.ok) {
-      throw new Error(response.statusText);
+  return fetch(API_BASE_URL + "search?" + queryString, options).then(
+    (response) => {
+      if (!response.ok) {
+        throw new Error(response.statusText);
+      }
+      return response.json() as Promise<SearchResponse>;
     }
-    return response.json() as Promise<SearchResponse>;
-  });
+  );
 }
