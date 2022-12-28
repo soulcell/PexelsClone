@@ -1,10 +1,9 @@
 import { useTranslation } from "react-i18next";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   setSearchOrientation,
   setSearchSize,
 } from "../../redux/actionCreators/searchActionCreators";
-import selectSearchPhotos from "../../redux/reducers/photos/search/selector";
 import Dropdown from "../dropdown/Dropdown";
 import DropdownItem from "../dropdown/DropdownItem";
 import styles from "./Filters.module.css";
