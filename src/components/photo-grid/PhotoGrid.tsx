@@ -103,23 +103,19 @@ export default function PhotoGrid(props: PhotoGridProps): JSX.Element {
             {col.map((photo, i, arr) => {
               if (i === arr.length - 1) {
                 return (
-                  <>
-                    <div
-                      key={photo.id}
-                      className={styles.item}
-                      ref={(el) => (observedElements.current[colNum] = el)}
-                    >
-                      <PhotoCard photo={photo} />
-                    </div>
-                  </>
+                  <div
+                    key={photo.id}
+                    className={styles.item}
+                    ref={(el) => (observedElements.current[colNum] = el)}
+                  >
+                    <PhotoCard photo={photo} />
+                  </div>
                 );
               }
               return (
-                <>
-                  <div key={photo.id} className={styles.item}>
-                    <PhotoCard photo={photo} />
-                  </div>
-                </>
+                <div key={photo.id} className={styles.item}>
+                  <PhotoCard photo={photo} />
+                </div>
               );
             })}
           </div>
