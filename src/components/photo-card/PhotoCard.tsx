@@ -46,7 +46,12 @@ export default function PhotoCard({ photo }: PhotoCardProps): JSX.Element {
             rel="noopener noreferrer"
           >
             <i className={styles["svg-icon"]}>
-              <SVG icon="PhotoCardDownload" />
+              <SVG
+                icon="PhotoCardDownload"
+                width="100px"
+                height="100px"
+                viewBox="0 0 100 100"
+              />
             </i>
           </a>
           <button
@@ -72,14 +77,24 @@ function PhotoCardLikeIcon({ active }: PhotoCardLikeIconProps): JSX.Element {
         <i
           className={`${styles["button-like-not-active-icon"]} ${styles["svg-icon"]}`}
         >
-          <SVG icon="PhotoCardLike" />
+          <SVG
+            icon="PhotoCardLike"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          />
         </i>
       )}
       {active && (
         <i
           className={`${styles["button-like-active-icon"]} ${styles["svg-icon"]}`}
         >
-          <SVG icon="PhotoCardLikeFilled" />
+          <SVG
+            icon="PhotoCardLikeFilled"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          />
         </i>
       )}
     </>

@@ -1,4 +1,4 @@
-import { CSSProperties, useMemo } from "react";
+import { CSSProperties, SVGAttributes, useMemo } from "react";
 
 export type SVGIcon =
   | "NavbarLogo"
@@ -11,37 +11,15 @@ export type SVGIcon =
   | "PhotoCardLike"
   | "PhotoCardLikeFilled";
 
-export interface SVGProps {
+export type SVGProps = {
   icon: SVGIcon;
-  style?: CSSProperties;
-}
+} & SVGAttributes<SVGSVGElement>;
 
-export default function SVG({ icon, style }: SVGProps) {
+export default function SVG(props: SVGProps) {
+  const { icon, style } = props;
   const xlinkHref = useMemo(() => `/icons.svg#${icon}`, [icon]);
 
   switch (icon) {
-    case "NavbarLogo":
-      return (
-        <svg
-          style={style}
-          width="130"
-          height="50"
-          className="Display_desktop m-0 desktop-mr-30 mobile-mr-15 tablet-mr-15"
-        >
-          <use xlinkHref={xlinkHref} />
-        </svg>
-      );
-    case "NavbarLogoDark":
-      return (
-        <svg
-          style={style}
-          width="130"
-          height="50"
-          className="Display_desktop m-0 desktop-mr-30 mobile-mr-15 tablet-mr-15"
-        >
-          <use xlinkHref={xlinkHref} />
-        </svg>
-      );
     case "Loading":
       return (
         <svg
@@ -85,77 +63,9 @@ export default function SVG({ icon, style }: SVGProps) {
           </circle>
         </svg>
       );
-    case "Searchbar":
-      return (
-        <svg
-          style={style}
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          width="24"
-          height="24"
-        >
-          <use xlinkHref={xlinkHref} />
-        </svg>
-      );
-    case "DropdownArrow":
-      return (
-        <svg style={style} viewBox="0 0 24 24" width="24" height="24">
-          <use xlinkHref={xlinkHref} />
-        </svg>
-      );
-    case "DropdownSelected":
-      return (
-        <svg
-          className="Icon_color-black000000__Mlv51 spacing_noMargin__Q_PsJ"
-          viewBox="0 0 24 24"
-          width="24"
-          height="24"
-        >
-          <use xlinkHref={xlinkHref} />
-        </svg>
-      );
-    case "PhotoCardDownload":
-      return (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          xmlnsXlink="http://www.w3.org/1999/xlink"
-          height="100px"
-          width="100px"
-          fill="#000000"
-          version="1.1"
-          x="0px"
-          y="0px"
-          viewBox="0 0 100 100"
-          xmlSpace="preserve"
-        >
-          <use xlinkHref={xlinkHref} />
-        </svg>
-      );
-    case "PhotoCardLike":
-      return (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-        >
-          <use xlinkHref={xlinkHref} />
-        </svg>
-      );
-    case "PhotoCardLikeFilled":
-      return (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-        >
-          <use xlinkHref={xlinkHref} />
-        </svg>
-      );
     default:
       return (
-        <svg style={style} xmlns="http://www.w3.org/2000/svg">
+        <svg {...props}>
           <use xlinkHref={xlinkHref} />
         </svg>
       );

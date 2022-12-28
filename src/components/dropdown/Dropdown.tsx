@@ -80,6 +80,9 @@ export default function Dropdown(props: DropdownProps): JSX.Element {
                 <SVG
                   icon="DropdownArrow"
                   style={{ alignSelf: "flex-end", marginRight: "-5px" }}
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
                 />
               </span>
             </button>

@@ -4,7 +4,7 @@
   style="position: absolute; width: 0; height: 0"
   aria-hidden="true"
 >
-  <symbol id="NavbarLogo">
+  <symbol width="130" height="50" id="NavbarLogo">
     <g transform="translate(-3894 2762)">
       <rect
         width="50"

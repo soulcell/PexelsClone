@@ -32,7 +32,15 @@ export default function DropdownItem({
           >
             <span className={`${styles["childTextPrimary"]}`}>{title}</span>
           </span>
-          {isSelected && <SVG icon="DropdownSelected" />}
+          {isSelected && (
+            <SVG
+              icon="DropdownSelected"
+              className="m-0"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+            />
+          )}
         </span>
       </button>
     </>
