@@ -37,8 +37,9 @@ export default function searchPhotosReducer(
       return {
         ...state,
         loading: false,
-        currentPage: action.response.page,
+        error: null,
         photos: [...state.photos, ...action.response.photos],
+        currentPage: action.response.page,
         hasMore: Boolean(action.response.next_page),
       };
     case actions.LOAD_SEARCH_PHOTOS_FAILURE:

@@ -31,8 +31,9 @@ export default function curatedPhotosReducer(
       return {
         ...state,
         loading: false,
-        currentPage: action.response.page,
+        error: null,
         photos: [...state.photos, ...action.response.photos],
+        currentPage: action.response.page,
         hasMore: Boolean(action.response.next_page),
       };
     case actions.LOAD_CURATED_PHOTOS_FAILURE:
