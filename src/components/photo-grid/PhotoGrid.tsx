@@ -39,7 +39,7 @@ export default function PhotoGrid(props: PhotoGridProps): JSX.Element {
     window.addEventListener("resize", handleResize);
     handleResize();
     return () => window.removeEventListener("resize", handleResize);
-  }, [handleResize]);
+  }, []);
 
   useEffect(() => {
     if (screenSize === ScreenSize.Desktop) {
