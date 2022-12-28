@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { Photo } from "../../api/interfaces";
@@ -16,7 +16,7 @@ function HomePage(): JSX.Element {
   const photoSelector = useSelector(selectCuratedPhotos);
   const { t } = useTranslation();
 
-  const headerPhotoIdx = Math.floor(Math.random() * 12);
+  const headerPhotoIdx = useMemo(() => Math.floor(Math.random() * 12), []);
 
   const [headerPhoto, setHeaderPhoto] = useState<Photo | undefined>(undefined);
 

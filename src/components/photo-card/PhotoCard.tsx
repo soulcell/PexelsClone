@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Photo } from "../../api/interfaces";
 import {
@@ -16,7 +17,10 @@ export default function PhotoCard({ photo }: PhotoCardProps): JSX.Element {
   const favoritePhotos = useSelector(selectFavoritePhotos);
   const dispatch = useDispatch();
 
-  let isLiked = favoritePhotos.photoIds.includes(photo.id);
+  const isLiked = useMemo(
+    () => favoritePhotos.photoIds.includes(photo.id),
+    [favoritePhotos.photoIds, photo.id]
+  );
 
   function handleLikeClick() {
     if (!isLiked) {

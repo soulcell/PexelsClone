@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -17,7 +17,7 @@ import Filters from "../../components/filters/Filters";
 function SearchPage(): JSX.Element {
   const dispatch = useDispatch();
   const params = useParams();
-  const searchString = params["*"]!.split("/")[0];
+  const searchString = useMemo(() => params["*"]!.split("/")[0], [params]);
   const searchSelector = useSelector(selectSearchPhotos);
 
   const { t, i18n } = useTranslation();
