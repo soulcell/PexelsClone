@@ -22,7 +22,7 @@ export default function Searchbar(): JSX.Element {
       event.preventDefault();
       navigate(`/search/${searchString}`);
     },
-    [searchString]
+    [searchString, navigate]
   );
 
   return (

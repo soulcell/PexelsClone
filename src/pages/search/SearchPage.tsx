@@ -34,7 +34,13 @@ function SearchPage(): JSX.Element {
           searchSelector.searchSize
         )
       ),
-    [searchString, searchSelector.searchOrientation, searchSelector.searchSize]
+    [
+      dispatch,
+      searchString,
+      i18n.language,
+      searchSelector.searchOrientation,
+      searchSelector.searchSize,
+    ]
   );
 
   useEffect(() => {
