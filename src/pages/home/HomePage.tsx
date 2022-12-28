@@ -30,7 +30,7 @@ function HomePage(): JSX.Element {
 
   return (
     <>
-      <Navbar isHomePage={true} />
+      <Navbar isHomePage />
       <HeroHeader photo={headerPhoto} />
       <main
         className={`${wrapperStyles.maxWidth} ${wrapperStyles.horizontalPadding} mobile-mt-20 tablet-mt-30 desktop-mt-30 mb-30`}

@@ -42,7 +42,7 @@ function SearchPage(): JSX.Element {
 
   return (
     <>
-      <Navbar isHomePage={false} />
+      <Navbar />
       <div
         className={`${wrapperStyles.maxWidth} ${wrapperStyles.horizontalPadding} mobile-mt-20 tablet-mt-30 desktop-mt-30 mb-30`}
       >

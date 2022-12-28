@@ -7,7 +7,7 @@ import LanguageSelector from "../language-selector/LanguageSelector";
 import SVG from "../svg/SVG";
 
 export interface NavbarProps {
-  isHomePage: boolean;
+  isHomePage?: boolean;
   scrollThreshold?: number;
 }
 
