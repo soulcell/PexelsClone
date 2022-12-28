@@ -22,23 +22,25 @@ function SearchPage(): JSX.Element {
 
   const { t, i18n } = useTranslation();
 
-  const loadActionCreator = useCallback(
+  const dispatchLoad = useCallback(
     (page: number) =>
-      loadSearchPhotos(
-        searchString,
-        page,
-        undefined,
-        i18n.language,
-        searchSelector.searchOrientation,
-        searchSelector.searchSize
+      dispatch(
+        loadSearchPhotos(
+          searchString,
+          page,
+          undefined,
+          i18n.language,
+          searchSelector.searchOrientation,
+          searchSelector.searchSize
+        )
       ),
     [searchString, searchSelector.searchOrientation, searchSelector.searchSize]
   );
 
   useEffect(() => {
     dispatch(clearSearchPhotos());
-    dispatch(loadActionCreator(1));
-  }, [searchString, dispatch, loadActionCreator]);
+    dispatchLoad(1);
+  }, [searchString, dispatch, dispatchLoad]);
 
   return (
     <>
@@ -54,10 +56,7 @@ function SearchPage(): JSX.Element {
             : t("pages.search.mainHeader", { searchString })}
         </h4>
         <Filters />
-        <PhotoGrid
-          selector={selectSearchPhotos}
-          loadActionCreator={loadActionCreator}
-        />
+        <PhotoGrid selector={selectSearchPhotos} dispatchLoad={dispatchLoad} />
         {searchSelector.loading && <Loading />}
       </div>
     </>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { Photo } from "../../api/interfaces";
@@ -20,9 +20,14 @@ function HomePage(): JSX.Element {
 
   const [headerPhoto, setHeaderPhoto] = useState<Photo | undefined>(undefined);
 
+  const dispatchLoad = useCallback(
+    (page: number) => dispatch(loadCuratedPhotos(page)),
+    [dispatch]
+  );
+
   useEffect(() => {
-    dispatch(loadCuratedPhotos(1));
-  }, [dispatch]);
+    dispatchLoad(1);
+  }, [dispatchLoad]);
 
   useEffect(() => {
     if (!headerPhoto) setHeaderPhoto(photoSelector.photos[headerPhotoIdx]);
@@ -40,10 +45,7 @@ function HomePage(): JSX.Element {
         >
           {t("pages.home.mainHeader")}
         </h4>
-        <PhotoGrid
-          selector={selectCuratedPhotos}
-          loadActionCreator={loadCuratedPhotos}
-        />
+        <PhotoGrid selector={selectCuratedPhotos} dispatchLoad={dispatchLoad} />
         {photoSelector.loading && <Loading />}
       </main>
     </>

@@ -1,6 +1,6 @@
 import { AnyAction } from "@reduxjs/toolkit";
-import { useCallback, useEffect, useRef, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useSelector } from "react-redux";
 import { Photo } from "../../api/interfaces";
 import { PhotosState } from "../../redux/reducers/photos/interfaces";
 import { AppState } from "../../redux/reducers/rootReducer";
@@ -8,7 +8,7 @@ import PhotoCard from "../photo-card/PhotoCard";
 import styles from "./PhotoGrid.module.css";
 
 export interface PhotoGridProps {
-  loadActionCreator: (page: number) => AnyAction;
+  dispatchLoad: (page: number) => AnyAction;
   selector: (state: AppState) => PhotosState;
 }
 
@@ -21,10 +21,9 @@ export default function PhotoGrid(props: PhotoGridProps): JSX.Element {
   const [screenSize, setScreenSize] = useState<ScreenSize>();
   const [columns, setColumns] = useState<Array<Array<Photo>>>([[], []]);
   const selectPhotos = useSelector(props.selector);
-  const dispatch = useDispatch();
   const observedElements = useRef<Array<Element | null>>([]);
 
-  const photos = selectPhotos.photos;
+  const photos = useMemo(() => selectPhotos.photos, [selectPhotos.photos]);
 
   const handleResize = useCallback(() => {
     if (window.innerWidth > 900 && screenSize !== ScreenSize.Desktop) {
@@ -73,7 +72,7 @@ export default function PhotoGrid(props: PhotoGridProps): JSX.Element {
           selectPhotos.hasMore &&
           !selectPhotos.loading
         ) {
-          dispatch(props.loadActionCreator(selectPhotos.currentPage + 1));
+          props.dispatchLoad(selectPhotos.currentPage + 1);
           observer.disconnect();
         }
       });
@@ -82,7 +81,6 @@ export default function PhotoGrid(props: PhotoGridProps): JSX.Element {
       selectPhotos.hasMore,
       selectPhotos.loading,
       selectPhotos.currentPage,
-      dispatch,
       props,
     ]
   );
