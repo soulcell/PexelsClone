@@ -68,10 +68,8 @@ export default function Navbar({
 
 function NavbarLogo({ isDark }: NavbarLogoProps): JSX.Element {
   return (
-    <>
-      <Link className={`${styles.logo} clickable link m-0`} to="/">
-        <SVG icon={isDark ? "NavbarLogoDark" : "NavbarLogo"} />
-      </Link>
-    </>
+    <Link className={`${styles.logo} clickable link m-0`} to="/">
+      <SVG icon={isDark ? "NavbarLogoDark" : "NavbarLogo"} />
+    </Link>
   );
 }

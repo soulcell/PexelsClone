@@ -26,29 +26,27 @@ export default function Searchbar(): JSX.Element {
   );
 
   return (
-    <>
-      <form
-        className={`${styles.form} m-0`}
-        role="search"
-        autoComplete="off"
-        onSubmit={handleSubmit}
-      >
-        <div className={styles.container}>
-          <input
-            defaultValue={initialSearchString}
-            className={styles.input}
-            type="search"
-            autoCapitalize="none"
-            autoComplete="off"
-            autoFocus
-            placeholder={t("components.searchbar.placeholder").toString()}
-            onChange={handleChange}
-          ></input>
-          <button className={styles.button} type="submit">
-            <SVG icon="Searchbar" />
-          </button>
-        </div>
-      </form>
-    </>
+    <form
+      className={`${styles.form} m-0`}
+      role="search"
+      autoComplete="off"
+      onSubmit={handleSubmit}
+    >
+      <div className={styles.container}>
+        <input
+          defaultValue={initialSearchString}
+          className={styles.input}
+          type="search"
+          autoCapitalize="none"
+          autoComplete="off"
+          autoFocus
+          placeholder={t("components.searchbar.placeholder").toString()}
+          onChange={handleChange}
+        />
+        <button className={styles.button} type="submit">
+          <SVG icon="Searchbar" />
+        </button>
+      </div>
+    </form>
   );
 }

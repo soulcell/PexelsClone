@@ -10,14 +10,12 @@ export default function LanguageSelector(): JSX.Element {
   }
 
   return (
-    <>
-      <Dropdown
-        title={t("components.languageSelector.title").toString()}
-        onSelectedValueChanged={handleChange}
-      >
-        <DropdownItem title="English" value="en-US" />
-        <DropdownItem title="Русский" value="ru-RU" defaultSelected={true} />
-      </Dropdown>
-    </>
+    <Dropdown
+      title={t("components.languageSelector.title").toString()}
+      onSelectedValueChanged={handleChange}
+    >
+      <DropdownItem title="English" value="en-US" />
+      <DropdownItem title="Русский" value="ru-RU" defaultSelected={true} />
+    </Dropdown>
   );
 }

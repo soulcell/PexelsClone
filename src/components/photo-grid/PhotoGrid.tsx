@@ -96,39 +96,37 @@ export default function PhotoGrid(props: PhotoGridProps): JSX.Element {
   });
 
   return (
-    <>
-      <div
-        className={`${styles.grid} ${styles["grid-spacing-desktop-30"]} ${styles["grid-spacing-tablet-15"]} ${styles["grid-spacing-mobile-15"]}`}
-      >
-        {columns.map((col, colNum) => {
-          return (
-            <div key={colNum} className={styles.column}>
-              {col.map((photo, i, arr) => {
-                if (i === arr.length - 1) {
-                  return (
-                    <>
-                      <div
-                        key={photo.id}
-                        className={styles.item}
-                        ref={(el) => (observedElements.current[colNum] = el)}
-                      >
-                        <PhotoCard photo={photo} />
-                      </div>
-                    </>
-                  );
-                }
+    <div
+      className={`${styles.grid} ${styles["grid-spacing-desktop-30"]} ${styles["grid-spacing-tablet-15"]} ${styles["grid-spacing-mobile-15"]}`}
+    >
+      {columns.map((col, colNum) => {
+        return (
+          <div key={colNum} className={styles.column}>
+            {col.map((photo, i, arr) => {
+              if (i === arr.length - 1) {
                 return (
                   <>
-                    <div key={photo.id} className={styles.item}>
+                    <div
+                      key={photo.id}
+                      className={styles.item}
+                      ref={(el) => (observedElements.current[colNum] = el)}
+                    >
                       <PhotoCard photo={photo} />
                     </div>
                   </>
                 );
-              })}
-            </div>
-          );
-        })}
-      </div>
-    </>
+              }
+              return (
+                <>
+                  <div key={photo.id} className={styles.item}>
+                    <PhotoCard photo={photo} />
+                  </div>
+                </>
+              );
+            })}
+          </div>
+        );
+      })}
+    </div>
   );
 }

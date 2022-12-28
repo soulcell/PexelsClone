@@ -28,7 +28,7 @@ export default function SVG({ icon, style }: SVGProps) {
           height="50"
           className="Display_desktop m-0 desktop-mr-30 mobile-mr-15 tablet-mr-15"
         >
-          <use xlinkHref={xlinkHref}></use>
+          <use xlinkHref={xlinkHref} />
         </svg>
       );
     case "NavbarLogoDark":
@@ -39,7 +39,7 @@ export default function SVG({ icon, style }: SVGProps) {
           height="50"
           className="Display_desktop m-0 desktop-mr-30 mobile-mr-15 tablet-mr-15"
         >
-          <use xlinkHref={xlinkHref}></use>
+          <use xlinkHref={xlinkHref} />
         </svg>
       );
     case "Loading":
@@ -94,13 +94,13 @@ export default function SVG({ icon, style }: SVGProps) {
           width="24"
           height="24"
         >
-          <use xlinkHref={xlinkHref}></use>
+          <use xlinkHref={xlinkHref} />
         </svg>
       );
     case "DropdownArrow":
       return (
         <svg style={style} viewBox="0 0 24 24" width="24" height="24">
-          <use xlinkHref={xlinkHref}></use>
+          <use xlinkHref={xlinkHref} />
         </svg>
       );
     case "DropdownSelected":
@@ -111,7 +111,7 @@ export default function SVG({ icon, style }: SVGProps) {
           width="24"
           height="24"
         >
-          <use xlinkHref={xlinkHref}></use>
+          <use xlinkHref={xlinkHref} />
         </svg>
       );
     case "PhotoCardDownload":
@@ -128,7 +128,7 @@ export default function SVG({ icon, style }: SVGProps) {
           viewBox="0 0 100 100"
           xmlSpace="preserve"
         >
-          <use xlinkHref={xlinkHref}></use>
+          <use xlinkHref={xlinkHref} />
         </svg>
       );
     case "PhotoCardLike":
@@ -139,7 +139,7 @@ export default function SVG({ icon, style }: SVGProps) {
           height="24"
           viewBox="0 0 24 24"
         >
-          <use xlinkHref={xlinkHref}></use>
+          <use xlinkHref={xlinkHref} />
         </svg>
       );
     case "PhotoCardLikeFilled":
@@ -150,13 +150,13 @@ export default function SVG({ icon, style }: SVGProps) {
           height="24"
           viewBox="0 0 24 24"
         >
-          <use xlinkHref={xlinkHref}></use>
+          <use xlinkHref={xlinkHref} />
         </svg>
       );
     default:
       return (
         <svg style={style} xmlns="http://www.w3.org/2000/svg">
-          <use xlinkHref={xlinkHref}></use>
+          <use xlinkHref={xlinkHref} />
         </svg>
       );
   }

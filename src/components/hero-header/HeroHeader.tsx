@@ -23,7 +23,7 @@ export default function HeroHeader({ photo }: HeroHeaderProps): JSX.Element {
           >
             {t("components.heroHeader.welcome")}
           </h1>
-          <Searchbar></Searchbar>
+          <Searchbar />
           <HeroHeaderTrending />
         </div>
         {photo && (
@@ -32,7 +32,7 @@ export default function HeroHeader({ photo }: HeroHeaderProps): JSX.Element {
               className={`${styles.img} m-0`}
               src={photo.src.landscape}
               alt={photo.alt}
-            ></img>
+            />
             <HeroHeaderAttribution
               authorName={photo.photographer}
               authorUrl={photo.photographer_url}
