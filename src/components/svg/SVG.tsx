@@ -1,4 +1,4 @@
-import { CSSProperties, SVGAttributes, useMemo } from "react";
+import { SVGAttributes, useMemo } from "react";
 
 export type SVGIcon =
   | "NavbarLogo"
@@ -16,14 +16,12 @@ export type SVGProps = {
 } & SVGAttributes<SVGSVGElement>;
 
 export default function SVG(props: SVGProps) {
-  const { icon, style } = props;
-  const xlinkHref = useMemo(() => `/icons.svg#${icon}`, [icon]);
+  const xlinkHref = useMemo(() => `/icons.svg#${props.icon}`, [props.icon]);
 
-  switch (icon) {
+  switch (props.icon) {
     case "Loading":
       return (
         <svg
-          style={style}
           version="1.1"
           id="L4"
           xmlns="http://www.w3.org/2000/svg"
@@ -33,6 +31,7 @@ export default function SVG(props: SVGProps) {
           viewBox="0 0 100 100"
           enableBackground="new 0 0 0 0"
           xmlSpace="preserve"
+          {...props}
         >
           <circle stroke="none" cx="6" cy="50" r="6">
             <animate
