@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -7,7 +7,13 @@ import SVG from "../svg/SVG";
 import styles from "./Searchbar.module.css";
 
 export default function Searchbar(): JSX.Element {
-  const initialSearchString = useSelector(selectSearchPhotos).searchString;
+  const searchPhotos = useSelector(selectSearchPhotos);
+  const [initialSearchString, setInitialSearchString] = useState("");
+
+  useEffect(() => {
+    setInitialSearchString(searchPhotos.searchString);
+  }, [searchPhotos.searchString]);
+
   const [searchString, setSearchString] = useState(initialSearchString);
 
   const { t } = useTranslation();

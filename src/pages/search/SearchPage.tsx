@@ -46,7 +46,12 @@ function SearchPage(): JSX.Element {
   useEffect(() => {
     dispatch(clearSearchPhotos());
     dispatchLoad(1);
-  }, [searchString, dispatch, dispatchLoad]);
+
+    return () => {
+      console.log("clearing");
+      dispatch(clearSearchPhotos());
+    };
+  }, [dispatch, dispatchLoad]);
 
   return (
     <>
