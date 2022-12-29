@@ -3,7 +3,7 @@ import styles from "./HeroHeader.module.css";
 import textStyles from "../../sharedStyles/Text.module.css";
 import { Photo } from "../../api/interfaces";
 import { useTranslation } from "react-i18next";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 export interface HeroHeaderProps {
   photo?: Photo;
@@ -48,16 +48,19 @@ function HeroHeaderTrending(): JSX.Element {
   const { t, i18n } = useTranslation();
   const [trendingSelections, setTrendingSelections] = useState<string[]>([]);
 
-  useEffect(() => {
-    const trendingSelectionIds = new Set<number>();
-    while (trendingSelectionIds.size < 7) {
-      trendingSelectionIds.add(Math.floor(Math.random() * 40));
+  const trendingSelectionIds = useMemo(() => {
+    const tempIds = new Set<number>();
+    while (tempIds.size < 7) {
+      tempIds.add(Math.floor(Math.random() * 40));
     }
+    return tempIds;
+  }, []);
 
+  useEffect(() => {
     setTrendingSelections(
       [...trendingSelectionIds].map((i) => t(`trending.${i}`))
     );
-  }, [t, i18n.language]);
+  }, [t, i18n.language, trendingSelectionIds]);
 
   return (
     <>

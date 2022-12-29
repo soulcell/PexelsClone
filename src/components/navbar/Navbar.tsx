@@ -27,9 +27,13 @@ export default function Navbar({
   const [screenSize, setScreenSize] = useState<ScreenSize>("Desktop");
   const [isMenuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+  const menuTriggerRef = useRef<HTMLButtonElement>(null);
 
   function clickOutsideHandler(e: Event) {
-    if (!menuRef.current?.contains(e.target as Node)) {
+    if (
+      !menuRef.current?.contains(e.target as Node) &&
+      !menuTriggerRef.current?.contains(e.target as Node)
+    ) {
       setMenuOpen(false);
     }
   }
@@ -93,8 +97,9 @@ export default function Navbar({
           </div>
           <div className={styles.right}>
             {screenSize === "Desktop" && <LanguageSelector />}
-            {screenSize === "Mobile" && !isMenuOpen && (
+            {screenSize === "Mobile" && (
               <button
+                ref={menuTriggerRef}
                 onClick={() => setMenuOpen(!isMenuOpen)}
                 className={`${stylesBtn["button"]} px-20 ${stylesBtn["icon-solo"]} ${stylesBtn["noBorder"]}`}
               >

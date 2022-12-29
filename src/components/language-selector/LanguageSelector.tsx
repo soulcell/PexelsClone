@@ -6,7 +6,9 @@ export default function LanguageSelector(): JSX.Element {
   const { t, i18n } = useTranslation();
 
   function handleChange(value: string) {
-    i18n.changeLanguage(value);
+    if (value !== i18n.language) {
+      i18n.changeLanguage(value);
+    }
   }
 
   return (
