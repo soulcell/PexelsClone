@@ -77,8 +77,8 @@ export default function Navbar({
 
   return (
     <>
-      {isMenuOpen && <div className={styles.fade}></div>}
-      {!isHomePage && <div className={styles.placeholderPadding}></div>}
+      {isMenuOpen && <div className={styles.fade} />}
+      {!isHomePage && <div className={styles.placeholderPadding} />}
       <div
         className={`${styles.container} ${isFixed ? styles.transparent : ""} ${
           styles.homePage
