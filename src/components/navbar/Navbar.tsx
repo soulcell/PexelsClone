@@ -4,9 +4,9 @@ import Searchbar from "../searchbar/Searchbar";
 import { Link } from "react-router-dom";
 import LanguageSelector from "../language-selector/LanguageSelector";
 import SVG from "../svg/SVG";
-import styles from "./Navbar.module.css";
 import stylesWrapper from "../../sharedStyles/Wrapper.module.css";
 import stylesBtn from "../../sharedStyles/Button.module.css";
+import styles from "./Navbar.module.css";
 
 export interface NavbarProps {
   isHomePage?: boolean;
@@ -84,16 +84,16 @@ export default function Navbar({
       {isMenuOpen && <div className={styles.fade} />}
       {!isHomePage && <div className={styles.placeholderPadding} />}
       <div
-        className={`${styles.container} ${isFixed ? styles.transparent : ""} ${
-          styles.homePage
-        }`}
+        className={`${styles.container} ${
+          isFixed && !isMenuOpen ? styles.transparent : ""
+        } ${styles.homePage}`}
       >
         <nav
           className={`m-0 desktop-px-30 mobile-px-8 tablet-px-15 ${styles.flex} ${stylesWrapper.maxWidth}`}
         >
           <div className={styles.left}>
-            <NavbarLogo isDark={!isFixed} />
-            {isFixed || <Searchbar />}
+            <NavbarLogo isDark={!isFixed || isMenuOpen} />
+            {(!isFixed || isMenuOpen) && <Searchbar />}
           </div>
           <div className={styles.right}>
             {screenSize === "Desktop" && <LanguageSelector />}
@@ -101,15 +101,13 @@ export default function Navbar({
               <button
                 ref={menuTriggerRef}
                 onClick={() => setMenuOpen(!isMenuOpen)}
-                className={`${stylesBtn["button"]} px-20 ${stylesBtn["icon-solo"]} ${stylesBtn["noBorder"]}`}
+                className={`${stylesBtn["button"]} px-20 ${stylesBtn["icon-solo"]} ${stylesBtn["noBorder"]} ${styles["menuButton"]}`}
               >
                 <span>
                   <SVG
                     icon="NavbarMenu"
-                    width="26"
-                    height="26"
                     viewBox="0 0 24 24"
-                    fill={!isFixed ? "#000" : "#fff"}
+                    fill={isFixed && !isMenuOpen ? "#fff" : "#000"}
                   />
                 </span>
               </button>
