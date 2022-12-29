@@ -9,7 +9,8 @@ export type SVGIcon =
   | "DropdownSelected"
   | "PhotoCardDownload"
   | "PhotoCardLike"
-  | "PhotoCardLikeFilled";
+  | "PhotoCardLikeFilled"
+  | "NavbarMenu";
 
 export type SVGProps = {
   icon: SVGIcon;

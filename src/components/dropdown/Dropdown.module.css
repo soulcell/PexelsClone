@@ -51,19 +51,12 @@
   z-index: 9;
   display: none;
   overflow: auto;
-  min-width: 300px;
   max-width: calc(100vw - 50px);
   max-height: 50vh;
   border: 1px solid rgb(223, 223, 224);
   border-radius: 6px;
   background: rgb(255, 255, 255);
   box-shadow: rgba(0, 0, 0, 0.05) 0px 3px 5px 1px;
-}
-
-@media (min-width: 0) and (max-width: 650px) {
-  .menu {
-    min-width: 0px;
-  }
 }
 
 @media (max-height: 600px) {
