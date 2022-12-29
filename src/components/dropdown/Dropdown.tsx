@@ -25,6 +25,7 @@ export default function Dropdown(props: DropdownProps): JSX.Element {
   const [title, setTitle] = useState(props.title);
 
   useEffect(() => {
+    setOpen(false);
     let el = Children.toArray(props.children)[selectedIndex];
     if (isValidElement<DropdownItemProps>(el)) {
       setSelectedValue(el.props.value);
