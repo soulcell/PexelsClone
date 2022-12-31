@@ -22,6 +22,25 @@ export default function PhotoCard({ photo }: PhotoCardProps): JSX.Element {
     [favoritePhotos.photoIds, photo.id]
   );
 
+  function handleDownload() {
+    fetch(photo.src.original, {
+      headers: new Headers({
+        Origin: window.location.origin,
+      }),
+      mode: "cors",
+    })
+      .then((response) => response.blob())
+      .then((blob) => {
+        let blobUrl = window.URL.createObjectURL(blob);
+        let lnk = document.createElement("a");
+        lnk.download = photo.alt;
+        lnk.href = blobUrl;
+        document.body.appendChild(lnk);
+        lnk.click();
+        lnk.remove();
+      });
+  }
+
   function handleLikeClick() {
     if (!isLiked) {
       dispatch(addFavoritePhoto(photo));
@@ -31,42 +50,38 @@ export default function PhotoCard({ photo }: PhotoCardProps): JSX.Element {
   }
 
   return (
-    <>
-      <article className={`${styles.card} ${styles.overlay}`}>
-        <img className={styles.image} src={photo.src.large2x} alt={photo.alt} />
-        <a
-          className={styles.photographer}
-          href={photo.photographer_url}
-          target="_blank"
-          rel="noopener noreferrer"
+    <article className={`${styles.card} ${styles.overlay}`}>
+      <img className={styles.image} src={photo.src.large2x} alt={photo.alt} />
+      <a
+        className={styles.photographer}
+        href={photo.photographer_url}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span className={styles.name}>{photo.photographer}</span>
+      </a>
+      <div className={styles.info}>
+        <button
+          className={`${styles.download} ${styles.button} ${styles["button-text-white"]} p-0`}
+          onClick={handleDownload}
         >
-          <span className={styles.name}>{photo.photographer}</span>
-        </a>
-        <div className={styles.info}>
-          <a
-            className={`${styles.download} ${styles.button} ${styles["button-text-white"]} p-0`}
-            href={photo.src.original}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i className={styles["svg-icon"]}>
-              <SVG
-                icon="PhotoCardDownload"
-                width="100px"
-                height="100px"
-                viewBox="0 0 100 100"
-              />
-            </i>
-          </a>
-          <button
-            onClick={handleLikeClick}
-            className={`${styles.like} ${styles.button} ${styles["button-like"]} ${styles["button-text-white"]} p-0`}
-          >
-            <PhotoCardLikeIcon active={isLiked} />
-          </button>
-        </div>
-      </article>
-    </>
+          <i className={styles["svg-icon"]}>
+            <SVG
+              icon="PhotoCardDownload"
+              width="100px"
+              height="100px"
+              viewBox="0 0 100 100"
+            />
+          </i>
+        </button>
+        <button
+          onClick={handleLikeClick}
+          className={`${styles.like} ${styles.button} ${styles["button-like"]} ${styles["button-text-white"]} p-0`}
+        >
+          <PhotoCardLikeIcon active={isLiked} />
+        </button>
+      </div>
+    </article>
   );
 }
 
