@@ -1,22 +1,36 @@
 import styles from "./Loading.module.css";
 
-export default function Loading(): JSX.Element {
+export interface LoadingProps {
+  size?: number;
+  color?: string;
+}
+
+export default function Loading({
+  size = 200,
+  color = "#222",
+}: LoadingProps): JSX.Element {
   return (
     <div className={styles["root"]}>
-      <div className={styles["loadingio-spinner-spinner-tlce58hty5"]}>
-        <div className={styles["ldio-ouxrbfu7gz"]}>
-          <div />
-          <div />
-          <div />
-          <div />
-          <div />
-          <div />
-          <div />
-          <div />
-          <div />
-          <div />
-          <div />
-          <div />
+      <div
+        style={{ width: size, height: size }}
+        className={styles["loadingio-spinner-spinner-tlce58hty5"]}
+      >
+        <div
+          style={{ transform: `scale(${size / 200})` }}
+          className={styles["ldio-ouxrbfu7gz"]}
+        >
+          <div style={{ background: color }} />
+          <div style={{ background: color }} />
+          <div style={{ background: color }} />
+          <div style={{ background: color }} />
+          <div style={{ background: color }} />
+          <div style={{ background: color }} />
+          <div style={{ background: color }} />
+          <div style={{ background: color }} />
+          <div style={{ background: color }} />
+          <div style={{ background: color }} />
+          <div style={{ background: color }} />
+          <div style={{ background: color }} />
         </div>
       </div>
     </div>
