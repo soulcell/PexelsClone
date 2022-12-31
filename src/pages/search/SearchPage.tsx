@@ -56,7 +56,7 @@ function SearchPage(): JSX.Element {
   return (
     <>
       <Navbar />
-      <div
+      <main
         className={`${wrapperStyles.maxWidth} ${wrapperStyles.horizontalPadding} mobile-mt-20 tablet-mt-30 desktop-mt-30 mb-30`}
       >
         <h4
@@ -69,7 +69,7 @@ function SearchPage(): JSX.Element {
         <Filters />
         <PhotoGrid selector={selectSearchPhotos} dispatchLoad={dispatchLoad} />
         {searchSelector.loading && <Loading />}
-      </div>
+      </main>
     </>
   );
 }
