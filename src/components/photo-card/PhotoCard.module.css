@@ -138,6 +138,24 @@
   font-style: normal;
 }
 
+.loading-icon {
+  margin-right: 6px;
+  margin-left: 6px;
+  width: 24px;
+  height: 24px;
+  top: 4px;
+  position: relative;
+  display: -webkit-inline-box;
+  display: inline-flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-style: normal;
+}
+
 .button {
   background: #05a081;
   color: #fff;

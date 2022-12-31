@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Photo } from "../../api/interfaces";
 import {
@@ -6,6 +6,7 @@ import {
   removeFavoritePhoto,
 } from "../../redux/actionCreators/favoriteActionCreators";
 import selectFavoritePhotos from "../../redux/reducers/photos/favorite/selector";
+import Loading from "../loader/Loading";
 import SVG from "../svg/SVG";
 import styles from "./PhotoCard.module.css";
 
@@ -16,29 +17,33 @@ export interface PhotoCardProps {
 export default function PhotoCard({ photo }: PhotoCardProps): JSX.Element {
   const favoritePhotos = useSelector(selectFavoritePhotos);
   const dispatch = useDispatch();
+  const [isDownloading, setDownloading] = useState(false);
 
   const isLiked = useMemo(
     () => favoritePhotos.photoIds.includes(photo.id),
     [favoritePhotos.photoIds, photo.id]
   );
 
-  function handleDownload() {
-    fetch(photo.src.original, {
-      headers: new Headers({
-        Origin: window.location.origin,
-      }),
-      mode: "cors",
-    })
-      .then((response) => response.blob())
-      .then((blob) => {
-        let blobUrl = window.URL.createObjectURL(blob);
-        let lnk = document.createElement("a");
-        lnk.download = photo.alt;
-        lnk.href = blobUrl;
-        document.body.appendChild(lnk);
-        lnk.click();
-        lnk.remove();
-      });
+  async function handleDownload() {
+    setDownloading(true);
+    const blob = await (
+      await fetch(photo.src.original, {
+        headers: new Headers({
+          Origin: window.location.origin,
+        }),
+        mode: "cors",
+      })
+    ).blob();
+
+    const blobUrl = window.URL.createObjectURL(blob);
+    const lnk = document.createElement("a");
+    lnk.download = photo.alt;
+    lnk.href = blobUrl;
+    document.body.appendChild(lnk);
+    lnk.click();
+    lnk.remove();
+
+    setDownloading(false);
   }
 
   function handleLikeClick() {
@@ -61,19 +66,27 @@ export default function PhotoCard({ photo }: PhotoCardProps): JSX.Element {
         <span className={styles.name}>{photo.photographer}</span>
       </a>
       <div className={styles.info}>
-        <button
-          className={`${styles.download} ${styles.button} ${styles["button-text-white"]} p-0`}
-          onClick={handleDownload}
-        >
-          <i className={styles["svg-icon"]}>
-            <SVG
-              icon="PhotoCardDownload"
-              width="100px"
-              height="100px"
-              viewBox="0 0 100 100"
-            />
-          </i>
-        </button>
+        {isDownloading ? (
+          <div className={styles.download}>
+            <i className={styles["loading-icon"]}>
+              <Loading size={32} color="#fff" />
+            </i>
+          </div>
+        ) : (
+          <button
+            className={`${styles.download} ${styles.button} ${styles["button-text-white"]} p-0`}
+            onClick={handleDownload}
+          >
+            <i className={styles["svg-icon"]}>
+              <SVG
+                icon="PhotoCardDownload"
+                width="100px"
+                height="100px"
+                viewBox="0 0 100 100"
+              />
+            </i>
+          </button>
+        )}
         <button
           onClick={handleLikeClick}
           className={`${styles.like} ${styles.button} ${styles["button-like"]} ${styles["button-text-white"]} p-0`}

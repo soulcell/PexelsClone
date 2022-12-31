@@ -10,7 +10,7 @@ export default function Loading({
   color = "#222",
 }: LoadingProps): JSX.Element {
   return (
-    <div className={styles["root"]}>
+    <div className={styles["root"]} style={{ height: size }}>
       <div
         style={{ width: size, height: size }}
         className={styles["loadingio-spinner-spinner-tlce58hty5"]}
